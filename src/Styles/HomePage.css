@@ -13,12 +13,6 @@
     }
   }
   
-  .Background-Slide{
-    background-image: url("./../Assets/Alp.JPG"); /*linear-gradient(blue, green)*/
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-  }
   
   .App-header {
     /*background-color: #282c34;*/
