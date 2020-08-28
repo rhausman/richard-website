@@ -59,3 +59,7 @@
   padding-left:10px
 }
 
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+

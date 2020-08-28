@@ -59,7 +59,9 @@ function App() {
           ()=> <>
             <RNavbar className="RNavbarTop" expand="lg" title="Welcome to the Beginning!">
               <Container>
-                <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                <NavDropdown title="Dropdown" id="collasible-nav-dropdown" className="dropdown"
+                  renderMenuOnMount={true}
+                >
                   <NavDropdown.Item href="#action/3.1">
                     <ScrollLink
                     activeClass="active"
