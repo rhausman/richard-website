@@ -1,5 +1,5 @@
 import React from "react"
-import {Nav, Navbar} from "react-bootstrap"
+import { Navbar} from "react-bootstrap" //Nav,
 import './../Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //assets
@@ -18,7 +18,7 @@ function RNavbar(props){
                 </Navbar.Collapse>
 
                 <p className="RNavbarText">
-                    {props.children}
+                    {children}
                 </p>
                 {/*
                 <img src={logo} alt="something went wrong" className="RNavbarElement"></img>

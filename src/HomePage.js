@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Parallax, Background } from "react-parallax";
-import {Button} from "react-bootstrap"
+import React from "react"; //,{ useEffect , useState }
+import { Parallax } from "react-parallax"; //, Background
+//import { render } from "@testing-library/react";
+//import {Button} from "react-bootstrap"
 import "./Styles/HomePage.css";
 import logo from './Assets/logo.svg';
 import './Styles/App.css';
@@ -10,17 +11,16 @@ import RNavbar from './Components/RNavbar'
 
 //assets
 import defaultParallaxImage from "./Assets/Alp.JPG"
-import { render } from "@testing-library/react";
 
 function HomePage(props) {
     const {parallaxImage=defaultParallaxImage, renderNavbar=true} = props //render navbar? or it is separate
-    const [initialized, setInitialized] = useState(false);
-    const [images, setImages] = useState([]);
-    const [layers, setLayers] = useState([]);
+    //const [initialized, setInitialized] = useState(false);
+    //const [images, setImages] = useState([]);
+    //const [layers, setLayers] = useState([]);
 
     // Conditionally render the navbar
     let navbar = <></>
-    if(renderNavbar==true){
+    if(renderNavbar===true){
         navbar=(
             <RNavbar className="RNavbarTop" expand="lg">
                 Welcome to my Website

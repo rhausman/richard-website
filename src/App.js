@@ -1,13 +1,14 @@
 import React from 'react';
 import {Button} from "react-bootstrap"
-import { Router, Route, Link } from "react-router-dom";
+import { Router, Route } from "react-router-dom"; //, Link
 import { Link as ScrollLink, Element, animateScroll as scroll } from "react-scroll";
 import { useScrollPercentage, ScrollPercentage } from 'react-scroll-percentage'
 import { createBrowserHistory as createHistory } from "history";
 //import custom components
-import Section from './Components/Section'
+//import Section from './Components/Section'
 import RNavbar from './Components/RNavbar'
 import HomePage from './HomePage';
+import IconLink from './Components/IconLink'
 
 //assets
 //import logo from './Assets/logo.svg';
@@ -16,9 +17,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import secondBgImage from "./Assets/seated_pic.JPG"
 import githubIcon from "./Assets/github_icon.png"
 import youtubeIcon from "./Assets/youtube_icon.png"
+import linkedinIcon from "./Assets/linkedin_icon.png"
 
 //global constant definition
-const iconSize= "50px"
+
 //setup
 const history = createHistory();
 
@@ -51,18 +53,8 @@ function App() {
         </ScrollLink>
     </Button>
   )
-  const githubIconLink= (
-      <a href="https://github.com/rhausman">
-        <img src={githubIcon} height={iconSize}/>
-      </a>
-  )
-  const youtubeIconLink= (
-    <a href="https://www.youtube.com/channel/UCYpNpdtcXBxc_zYCAFadnOg">
-      <img src={youtubeIcon} height={iconSize}/>
-    </a>
-  )
 
-  const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
+  //const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
   //const myRef = useRef(null)
   //const executeScroll = () => scrollToRef(myRef)
   
@@ -81,8 +73,10 @@ function App() {
             <RNavbar className="RNavbarTop" expand="lg">
               {scrollButton}
               Welcome to the beginning!
-              {youtubeIconLink}
-              {githubIconLink}
+              {/*IconLinks: Youtube, Github, LinkedIn */}
+              <IconLink link="https://www.youtube.com/channel/UCYpNpdtcXBxc_zYCAFadnOg" image={youtubeIcon} />
+              <IconLink link="https://github.com/rhausman" image={githubIcon} />
+              <IconLink link="https://www.linkedin.com/in/richard-hausman-824035154/" image={linkedinIcon} />
             </RNavbar>
             <HomePage renderNavbar="false" />
           </>
