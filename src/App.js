@@ -95,15 +95,15 @@ function App() {
           </>
           } />
       
-      <Section
+      
+      <Route path="/" render={
+        ()=> <>
+          <Section
           title="Section 2"
           subtitle="this is section 2"
           dark={false}
           id="section2"
         />
-      
-      <Route path="/" render={
-        ()=> <>
           <HomePage renderNavbar="false" parallaxImage={secondBgImage} />
         </>
         } />

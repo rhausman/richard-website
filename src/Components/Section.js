@@ -1,12 +1,12 @@
 import React from "react";
+import RNavbar from "./RNavbar"
 
-function Section({ title, subtitle, dark, id }) {
+function Section({ title, subtitle, dark, id, children}) {
   return (
-    <div className={"section" + (dark ? " section-dark" : "")}>
-      <div className="section-content" id={id}>
-        <h1>{title}</h1>
-        <p>{subtitle}</p>
-      </div>
+    <div id={id}>
+      <RNavbar className="RNavbarTop" expand="lg">
+        Welcome to the beginning!
+      </RNavbar>
     </div>
   );
 }

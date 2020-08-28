@@ -22,7 +22,8 @@ function HomePage(props) {
 
     // Conditionally render the navbar
     let navbar = <></>
-    if(renderNavbar===true){
+    if(renderNavbar=="true"){
+        console.log("generating navbar")
         navbar=(
             <RNavbar className="RNavbarTop" expand="lg">
                 Welcome to my Website
@@ -45,7 +46,7 @@ function HomePage(props) {
                     position: "absolute",
                     background: `white`,
                     left: "50%",
-                    top: "46.5%",
+                    top: "47%",
                     borderRadius: "50%",
                     transform: "translate(-50%,-50%)",
                     width: (percentage+0.05) * 500,
