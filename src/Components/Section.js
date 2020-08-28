@@ -1,11 +1,14 @@
 import React from "react";
+import { Navbar, Container} from "react-bootstrap" //Nav,
+
+//import custom modules
 import RNavbar from "./RNavbar"
 
-function Section({ title, subtitle, dark, id, children}) {
+function Section({ title, id, children}) {
   return (
     <div id={id}>
-      <RNavbar className="RNavbarTop" expand="lg">
-        Welcome to the beginning!
+      <RNavbar className="RNavbarTop" expand="lg" title={title}>
+        {children}
       </RNavbar>
     </div>
   );

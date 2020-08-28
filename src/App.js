@@ -40,20 +40,6 @@ function scrollOnChange(threshold,percentage, mem){
 }
 
 function App() {
-  const scrollButton = (
-    <Button variant="warning">
-      <ScrollLink
-        activeClass="active"
-        to="section2"
-        spy={true}
-        smooth={true}
-        offset={0}
-        duration={500}
-        >
-          Next Section
-        </ScrollLink>
-    </Button>
-  )
 
   //const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
   //const myRef = useRef(null)
@@ -71,7 +57,7 @@ function App() {
       >
         <Route path="/" render={
           ()=> <>
-            <RNavbar className="RNavbarTop" expand="lg">
+            <RNavbar className="RNavbarTop" expand="lg" title="Welcome to the Beginning!">
               <Button>
                 <ScrollLink
                   activeClass="active"
@@ -81,11 +67,9 @@ function App() {
                   offset={0}
                   duration={500}
                 >
-                  section 2
+                  EXPERIENCE
                 </ScrollLink>
               </Button>
-              {scrollButton}
-              Welcome to the beginning!
               {/*IconLinks: Youtube, Github, LinkedIn */}
               <IconLink link="https://www.youtube.com/channel/UCYpNpdtcXBxc_zYCAFadnOg" image={youtubeIcon} />
               <IconLink link="https://github.com/rhausman" image={githubIcon} />
@@ -99,12 +83,10 @@ function App() {
       <Route path="/" render={
         ()=> <>
           <Section
-          title="Section 2"
-          subtitle="this is section 2"
-          dark={false}
+          title="Experience"
           id="section2"
         />
-          <HomePage renderNavbar="false" parallaxImage={secondBgImage} />
+          <HomePage renderNavbar="false" parallaxImage={secondBgImage} titleMessage="EXPERIENCE" />
         </>
         } />
       

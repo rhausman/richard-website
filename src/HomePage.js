@@ -15,7 +15,7 @@ import AnimatedTitle from './Components/AnimatedTitle'
 import defaultParallaxImage from "./Assets/Alp.JPG"
 
 function HomePage(props) {
-    const {parallaxImage=defaultParallaxImage, renderNavbar=true} = props //render navbar? or it is separate
+    const {parallaxImage=defaultParallaxImage, renderNavbar=true, titleMessage="SCIENCE FOR HUMANITY"} = props //render navbar? or it is separate
     //const [initialized, setInitialized] = useState(false);
     //const [images, setImages] = useState([]);
     //const [layers, setLayers] = useState([]);
@@ -25,7 +25,7 @@ function HomePage(props) {
     if(renderNavbar=="true"){
         console.log("generating navbar")
         navbar=(
-            <RNavbar className="RNavbarTop" expand="lg">
+            <RNavbar className="RNavbarTop" expand="lg" title="Welcome to my Website">
                 Welcome to my Website
             </RNavbar>
             )
@@ -60,7 +60,7 @@ function HomePage(props) {
             <div>
         
                 <header className="App-header">
-                    <AnimatedTitle />
+                    <AnimatedTitle message={titleMessage} />
 
                     <img src={logo} className="App-logo" alt="logo" />
                     <p>

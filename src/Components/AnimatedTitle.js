@@ -9,11 +9,11 @@ const styles = {
     }
   }
 
-function AnimatedHeader(){
+function AnimatedHeader({message}){
     return(
         <StyleRoot>
             <div className="test" style={styles.fadeInDownBig}>
-                <h2>SCIENCE FOR HUMANITY</h2>
+                <h2>{message}</h2>
             </div>
         </StyleRoot>
     )

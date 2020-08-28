@@ -1,5 +1,5 @@
 import React from "react"
-import { Navbar} from "react-bootstrap" //Nav,
+import { Navbar, Container} from "react-bootstrap" //Nav,
 import './../Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //assets
@@ -11,7 +11,7 @@ const scrollTop = () =>{
  };
 
 function RNavbar(props){
-    const {bg, expand="lg",className, children} = props
+    const {bg, expand="lg",className, children, title} = props
     return (
             <Navbar bg = {bg} expand={expand} className={className}>
                 <Navbar.Collapse id="brand" className="RNavbarBrandText">
@@ -21,10 +21,20 @@ function RNavbar(props){
                     </Navbar.Brand>{' '}
                     Richard Hausman
                 </Navbar.Collapse>
+                
+                <Navbar.Collapse>
+                    <Container>
+                        <p className="RNavbarText">
+                            {title}
+                        </p>
+                    </Container>
+                </Navbar.Collapse>
 
-                <p className="RNavbarText">
-                    {children}
-                </p>
+                
+                    <p className="RNavbarText">
+                        {children}
+                    </p>
+                
                 {/*
                 <img src={logo} alt="something went wrong" className="RNavbarElement"></img>
                 */}
