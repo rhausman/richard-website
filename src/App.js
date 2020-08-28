@@ -2,6 +2,7 @@ import React from 'react';
 import {Button} from "react-bootstrap"
 import { Router, Route, Link } from "react-router-dom";
 import { Link as ScrollLink, Element, animateScroll as scroll } from "react-scroll";
+import { useScrollPercentage, ScrollPercentage } from 'react-scroll-percentage'
 import { createBrowserHistory as createHistory } from "history";
 //import custom components
 import Section from './Components/Section'
@@ -22,6 +23,19 @@ const iconSize= "50px"
 const history = createHistory();
 
 //const homepage = <HomePage parallaxImage={parallaxImage} />
+const autoscrollThreshold = 0.5
+function scrollOnChange(threshold,percentage, mem){
+  if(percentage>threshold && mem<threshold)
+  {
+    mem = percentage
+    window.scrollTo({top:1000, behavior:"smooth"})
+  } else if(percentage<threshold && mem>threshold){
+    mem=percentage
+  }
+
+  return mem
+}
+
 function App() {
   const scrollButton = (
     <Button variant="warning">
@@ -48,20 +62,32 @@ function App() {
     </a>
   )
 
+  const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
+  //const myRef = useRef(null)
+  //const executeScroll = () => scrollToRef(myRef)
+  
+  const [ref, percentage] = useScrollPercentage()
+  let percentageMem = 0.0
+
   return (
     <Router history={history}>
-
-      <Route path="/" render={
-        ()=> <>
-          <RNavbar className="RNavbarTop" expand="lg">
-            {scrollButton}
-            Welcome to the beginning!
-            {youtubeIconLink}
-            {githubIconLink}
-          </RNavbar>
-          <HomePage renderNavbar="false" />
-        </>
-        } />
+      
+      <ScrollPercentage
+        as="div"
+        onChange={(percentage, entry) => {percentageMem = scrollOnChange(autoscrollThreshold,percentage, percentageMem)}  }
+      >
+        <Route path="/" render={
+          ()=> <>
+            <RNavbar className="RNavbarTop" expand="lg">
+              {scrollButton}
+              Welcome to the beginning!
+              {youtubeIconLink}
+              {githubIconLink}
+            </RNavbar>
+            <HomePage renderNavbar="false" />
+          </>
+          } />
+      
       <Element name="section2" className="element">
         <Route path="/" render={
           ()=> <>
@@ -70,7 +96,7 @@ function App() {
           } />
       </Element>
 
-      
+      </ScrollPercentage>
     </Router>
   );
 }
