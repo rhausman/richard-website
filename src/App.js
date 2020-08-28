@@ -12,7 +12,12 @@ import HomePage from './HomePage';
 //import logo from './Assets/logo.svg';
 import './Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import secondBgImage from "./Assets/seated_pic.JPG"
+import githubIcon from "./Assets/github_icon.png"
+import youtubeIcon from "./Assets/youtube_icon.png"
 
+//global constant definition
+const iconSize= "50px"
 //setup
 const history = createHistory();
 
@@ -28,9 +33,19 @@ function App() {
         offset={-70}
         duration={500}
         >
-          Yes
+          Next Section
         </ScrollLink>
     </Button>
+  )
+  const githubIconLink= (
+      <a href="https://github.com/rhausman">
+        <img src={githubIcon} height={iconSize}/>
+      </a>
+  )
+  const youtubeIconLink= (
+    <a href="https://www.youtube.com/channel/UCYpNpdtcXBxc_zYCAFadnOg">
+      <img src={youtubeIcon} height={iconSize}/>
+    </a>
   )
 
   return (
@@ -39,8 +54,10 @@ function App() {
       <Route path="/" render={
         ()=> <>
           <RNavbar className="RNavbarTop" expand="lg">
-            Welcome to the beginning!
             {scrollButton}
+            Welcome to the beginning!
+            {youtubeIconLink}
+            {githubIconLink}
           </RNavbar>
           <HomePage renderNavbar="false" />
         </>
@@ -48,7 +65,7 @@ function App() {
       <Element name="section2" className="element">
         <Route path="/" render={
           ()=> <>
-            <HomePage renderNavbar="false" />
+            <HomePage renderNavbar="false" parallaxImage={secondBgImage} />
           </>
           } />
       </Element>

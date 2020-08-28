@@ -10,7 +10,7 @@ function RNavbar(props){
     return (
             <Navbar bg = {bg} expand={expand} className={className}>
                 <Navbar.Collapse id="brand">
-                    <Navbar.Brand  href="https://www.youtube.com/channel/UCYpNpdtcXBxc_zYCAFadnOg">
+                    <Navbar.Brand  href="https://www.youtube.com/watch?v=8ybW48rKBME">
                             <img src={logo} alt="Something went wrong"
                             className="d-inline-block align-top" height="40"></img>
                             Youtube

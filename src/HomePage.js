@@ -9,11 +9,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import RNavbar from './Components/RNavbar'
 
 //assets
-import parallaxImage from "./Assets/Alp.JPG"
+import defaultParallaxImage from "./Assets/Alp.JPG"
 import { render } from "@testing-library/react";
 
 function HomePage(props) {
-    const {paralaxImage, renderNavbar=true} = props //render navbar? or it is separate
+    const {parallaxImage=defaultParallaxImage, renderNavbar=true} = props //render navbar? or it is separate
     const [initialized, setInitialized] = useState(false);
     const [images, setImages] = useState([]);
     const [layers, setLayers] = useState([]);
