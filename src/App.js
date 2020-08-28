@@ -4,8 +4,9 @@ import { Router, Route } from "react-router-dom"; //, Link
 import { Link as ScrollLink, Element, animateScroll as scroll } from "react-scroll";
 import { useScrollPercentage, ScrollPercentage } from 'react-scroll-percentage'
 import { createBrowserHistory as createHistory } from "history";
+import { Navbar, Nav} from "react-bootstrap"
 //import custom components
-//import Section from './Components/Section'
+import Section from './Components/Section'
 import RNavbar from './Components/RNavbar'
 import HomePage from './HomePage';
 import IconLink from './Components/IconLink'
@@ -30,7 +31,7 @@ function scrollOnChange(threshold,percentage, mem){
   if(percentage>threshold && mem<threshold)
   {
     mem = percentage
-    window.scrollTo({top:1000, behavior:"smooth"})
+    window.scrollTo({top:2000, behavior:"smooth"})
   } else if(percentage<threshold && mem>threshold){
     mem=percentage
   }
@@ -46,7 +47,7 @@ function App() {
         to="section2"
         spy={true}
         smooth={true}
-        offset={-70}
+        offset={0}
         duration={500}
         >
           Next Section
@@ -71,6 +72,18 @@ function App() {
         <Route path="/" render={
           ()=> <>
             <RNavbar className="RNavbarTop" expand="lg">
+              <Button>
+                <ScrollLink
+                  activeClass="active"
+                  to="section2"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={500}
+                >
+                  section 2
+                </ScrollLink>
+              </Button>
               {scrollButton}
               Welcome to the beginning!
               {/*IconLinks: Youtube, Github, LinkedIn */}
@@ -82,13 +95,19 @@ function App() {
           </>
           } />
       
-      <Element name="section2" className="element">
-        <Route path="/" render={
-          ()=> <>
-            <HomePage renderNavbar="false" parallaxImage={secondBgImage} />
-          </>
-          } />
-      </Element>
+      <Section
+          title="Section 2"
+          subtitle="this is section 2"
+          dark={false}
+          id="section2"
+        />
+      
+      <Route path="/" render={
+        ()=> <>
+          <HomePage renderNavbar="false" parallaxImage={secondBgImage} />
+        </>
+        } />
+      
 
       </ScrollPercentage>
     </Router>

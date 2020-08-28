@@ -9,12 +9,12 @@ function RNavbar(props){
     const {bg, expand="lg",className, children} = props
     return (
             <Navbar bg = {bg} expand={expand} className={className}>
-                <Navbar.Collapse id="brand">
+                <Navbar.Collapse id="brand" className="RNavbarBrandText">
                     <Navbar.Brand  href="https://www.youtube.com/watch?v=8ybW48rKBME">
                             <img src={logo} alt="Something went wrong"
                             className="d-inline-block align-top" height="40"></img>
-                            Youtube
-                    </Navbar.Brand>
+                    </Navbar.Brand>{' '}
+                    Richard Hausman
                 </Navbar.Collapse>
 
                 <p className="RNavbarText">

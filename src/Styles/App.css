@@ -38,21 +38,16 @@
   }
 }
 
-.RNavbarTop {
-  background-color: aquamarine;
-}
 
-.RNavbarElement{
-  border: 5px solid #555;
-  margin-right: auto !important;
-}
 
+/*
 .RNavbarText{
   font-size: 20px;
   color: navy;
   text-transform: uppercase;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+*/
 
 .linkIcon{
   /*

@@ -2,12 +2,14 @@ import React from "react"; //,{ useEffect , useState }
 import { Parallax } from "react-parallax"; //, Background
 //import { render } from "@testing-library/react";
 //import {Button} from "react-bootstrap"
+import { Navbar, Nav} from "react-bootstrap"
 import "./Styles/HomePage.css";
 import logo from './Assets/logo.svg';
 import './Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import custom components
 import RNavbar from './Components/RNavbar'
+import AnimatedTitle from './Components/AnimatedTitle'
 
 //assets
 import defaultParallaxImage from "./Assets/Alp.JPG"
@@ -43,7 +45,7 @@ function HomePage(props) {
                     position: "absolute",
                     background: `white`,
                     left: "50%",
-                    top: "44%",
+                    top: "46.5%",
                     borderRadius: "50%",
                     transform: "translate(-50%,-50%)",
                     width: (percentage+0.05) * 500,
@@ -55,9 +57,10 @@ function HomePage(props) {
         >
             
             <div>
-                
         
                 <header className="App-header">
+                    <AnimatedTitle />
+
                     <img src={logo} className="App-logo" alt="logo" />
                     <p>
                     Edit <code>src/App.js</code> and save to reload.
