@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './../Assets/logo.svg'
 
 function RNavbar(props){
-    const {bg, expand="lg",className} = props
+    const {bg, expand="lg",className, children} = props
     return (
             <Navbar bg = {bg} expand={expand} className={className}>
                 <Navbar.Collapse id="brand">

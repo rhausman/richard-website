@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Parallax, Background } from "react-parallax";
+import {Button} from "react-bootstrap"
 import "./Styles/HomePage.css";
 import logo from './Assets/logo.svg';
 import './Styles/App.css';
@@ -9,13 +10,27 @@ import RNavbar from './Components/RNavbar'
 
 //assets
 import parallaxImage from "./Assets/Alp.JPG"
+import { render } from "@testing-library/react";
 
 function HomePage(props) {
-    const {paralaxImage} = props
+    const {paralaxImage, renderNavbar=true} = props //render navbar? or it is separate
     const [initialized, setInitialized] = useState(false);
     const [images, setImages] = useState([]);
     const [layers, setLayers] = useState([]);
+
+    // Conditionally render the navbar
+    let navbar = <></>
+    if(renderNavbar==true){
+        navbar=(
+            <RNavbar className="RNavbarTop" expand="lg">
+                Welcome to my Website
+            </RNavbar>
+            )
+    }
+
     return (
+        <>
+        {navbar}
         <Parallax
             blur={5}
             bgImage={parallaxImage}
@@ -28,40 +43,37 @@ function HomePage(props) {
                     position: "absolute",
                     background: `white`,
                     left: "50%",
-                    top: "50%",
+                    top: "44%",
                     borderRadius: "50%",
                     transform: "translate(-50%,-50%)",
-                    width: percentage * 500,
-                    height: percentage * 500,
+                    width: (percentage+0.05) * 500,
+                    height: (percentage+0.05) * 500,
                 }}
                 />
             </div>
             )}
         >
+            
+            <div>
+                
         
-            <div className="App">
-            
-            <RNavbar className="RNavbarTop" expand="lg">
-                Welcome to my Website
-            </RNavbar>
-    
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                >
-                Learn React
-                </a>
-            </header>
+                <header className="App-header">
+                    <img src={logo} className="App-logo" alt="logo" />
+                    <p>
+                    Edit <code>src/App.js</code> and save to reload.
+                    </p>
+                    <a
+                    className="App-link"
+                    href="https://reactjs.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    Learn React
+                    </a>
+                </header>
             </div>
-            
         </Parallax>
+        </>
     );
   }
 
