@@ -4,7 +4,7 @@ import { Router, Route } from "react-router-dom"; //, Link
 import { Link as ScrollLink, Element, animateScroll as scroll } from "react-scroll";
 import { useScrollPercentage, ScrollPercentage } from 'react-scroll-percentage'
 import { createBrowserHistory as createHistory } from "history";
-import { Navbar, Nav} from "react-bootstrap"
+import { Navbar, Nav, NavDropdown, Container} from "react-bootstrap"
 //import custom components
 import Section from './Components/Section'
 import RNavbar from './Components/RNavbar'
@@ -58,22 +58,28 @@ function App() {
         <Route path="/" render={
           ()=> <>
             <RNavbar className="RNavbarTop" expand="lg" title="Welcome to the Beginning!">
-              <Button>
-                <ScrollLink
-                  activeClass="active"
-                  to="section2"
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={500}
-                >
-                  EXPERIENCE
-                </ScrollLink>
-              </Button>
-              {/*IconLinks: Youtube, Github, LinkedIn */}
-              <IconLink link="https://www.youtube.com/channel/UCYpNpdtcXBxc_zYCAFadnOg" image={youtubeIcon} />
-              <IconLink link="https://github.com/rhausman" image={githubIcon} />
-              <IconLink link="https://www.linkedin.com/in/richard-hausman-824035154/" image={linkedinIcon} />
+              <Container>
+                <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                  <NavDropdown.Item href="#action/3.1">
+                    <ScrollLink
+                    activeClass="active"
+                    to="section2"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={500}
+                    >Experience</ScrollLink>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                </NavDropdown>
+                {/*IconLinks: Youtube, Github, LinkedIn */}
+                <IconLink link="https://www.youtube.com/channel/UCYpNpdtcXBxc_zYCAFadnOg" image={youtubeIcon} />
+                <IconLink link="https://github.com/rhausman" image={githubIcon} />
+                <IconLink link="https://www.linkedin.com/in/richard-hausman-824035154/" image={linkedinIcon} />
+              </Container>
             </RNavbar>
             <HomePage renderNavbar="false" />
           </>
