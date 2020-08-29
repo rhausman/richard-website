@@ -85,7 +85,7 @@ function App() {
               </Container>
             </RNavbar>
 
-            <HomePage renderNavbar="false">
+            <HomePage renderNavbar="false" senseTitleOnScreen="false">
               <AnimatedParagraph animationName="fadeInLeft" >
                 I am simply someone with a profound love of both science and humanity;{"\n"}
               </AnimatedParagraph>
@@ -103,7 +103,7 @@ function App() {
           title="Experience"
           id="section2"
           />
-          <HomePage renderNavbar="false" parallaxImage={secondBgImage} titleMessage="EXPERIENCE">
+          <HomePage renderNavbar="false" parallaxImage={secondBgImage} titleMessage="EXPERIENCE" senseTitleOnScreen="true">
             <AnimatedParagraph animationName="fadeInLeft" >
               Yeet ya,
               yeet ya

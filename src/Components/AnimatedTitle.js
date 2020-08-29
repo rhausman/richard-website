@@ -1,33 +1,35 @@
 import React, { useRef } from "react"
-import {fadeInDownBig} from "react-animations"
+import {fadeInDownBig, fadeInUpBig} from "react-animations"
 import Radium, {StyleRoot} from 'radium';
-
-import useOnScreen from "./VisibilityHook.js"
+import { useInView } from 'react-intersection-observer'
 
 const styles = {
     fadeInDownBig: {
       animation: 'x 1s',
       animationName: Radium.keyframes(fadeInDownBig, 'fadeInDownBig')
-    }
+    },
+    fadeInUpBig: {
+        animation: 'x 1s',
+        animationName: Radium.keyframes(fadeInUpBig, 'fadeInUpBig')
+      }
   }
 
-function AnimatedHeader({message, initialVisible=false}){
+function AnimatedTitle({message, senseOnScreen="false", initialVisible=false}){
 
-    // Ref for the element that we want to detect whether on screen
-    const ref = useRef();
-    // Call the hook passing in ref and root margin
-    // In this case it would only be considered onScreen if more ...
-    // ... than 300px of element is visible.
-    let onScreen = useOnScreen(ref, '-300px');
-    if (onScreen){console.log("ONSCREEN")} else{console.log("OFF SCR")}
+    let [ref, inView] = useInView({
+        /* Optional options */
+        triggerOnce:true,
+        threshold: 1.0
+      })
+    
 
     return(
-        <StyleRoot>
-            <div ref={ref} className="test" style={styles.fadeInDownBig}>
+        <StyleRoot >
+            <div ref={ref} className="test" style={(senseOnScreen=="false"||inView)?styles.fadeInDownBig:{}}>
                 <h2>{message}</h2>
             </div>
         </StyleRoot>
     )
 }
 
-export default AnimatedHeader
+export default AnimatedTitle
