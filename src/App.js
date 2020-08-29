@@ -1,15 +1,16 @@
 import React from 'react';
-import {Button} from "react-bootstrap"
+//import {Button} from "react-bootstrap"
 import { Router, Route } from "react-router-dom"; //, Link
-import { Link as ScrollLink, Element, animateScroll as scroll } from "react-scroll";
-import { useScrollPercentage, ScrollPercentage } from 'react-scroll-percentage'
+import { Link as ScrollLink} from "react-scroll"; //Element, animateScroll as scroll 
+import { ScrollPercentage } from 'react-scroll-percentage' //useScrollPercentage, 
 import { createBrowserHistory as createHistory } from "history";
-import { Navbar, Nav, NavDropdown, Container} from "react-bootstrap"
+import { NavDropdown, Container} from "react-bootstrap"
 //import custom components
 import Section from './Components/Section'
 import RNavbar from './Components/RNavbar'
 import HomePage from './HomePage';
 import IconLink from './Components/IconLink'
+import AnimatedParagraph from './Components/AnimatedParagraph'
 
 //assets
 //import logo from './Assets/logo.svg';
@@ -45,7 +46,7 @@ function App() {
   //const myRef = useRef(null)
   //const executeScroll = () => scrollToRef(myRef)
   
-  const [ref, percentage] = useScrollPercentage()
+  //const [ref, percentage] = useScrollPercentage()
   let percentageMem = 0.0
 
   return (
@@ -83,7 +84,15 @@ function App() {
                 <IconLink link="https://www.linkedin.com/in/richard-hausman-824035154/" image={linkedinIcon} />
               </Container>
             </RNavbar>
-            <HomePage renderNavbar="false" />
+
+            <HomePage renderNavbar="false">
+              <AnimatedParagraph animationName="fadeInLeft" >
+                I am simply someone with a profound love of both science and humanity;{"\n"}
+              </AnimatedParagraph>
+              <AnimatedParagraph animationName="fadeInRight" >
+                I want to use the technology at our disposal for the good of all people.
+              </AnimatedParagraph>
+            </HomePage>
           </>
           } />
       
@@ -93,8 +102,13 @@ function App() {
           <Section
           title="Experience"
           id="section2"
-        />
-          <HomePage renderNavbar="false" parallaxImage={secondBgImage} titleMessage="EXPERIENCE" />
+          />
+          <HomePage renderNavbar="false" parallaxImage={secondBgImage} titleMessage="EXPERIENCE">
+            <AnimatedParagraph animationName="fadeInLeft" >
+              Yeet ya,
+              yeet ya
+            </AnimatedParagraph>
+          </HomePage>
         </>
         } />
       

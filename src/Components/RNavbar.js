@@ -15,7 +15,7 @@ function RNavbar(props){
     return (
             <Navbar bg = {bg} expand={expand} className={className}>
                 <Navbar.Collapse id="brand" className="RNavbarBrandText">
-                    <Navbar.Brand  onClick={scrollTop}>
+                    <Navbar.Brand  onClick={scrollTop} style={{cursor: "pointer"}}>
                             <img src={logo} alt="Something went wrong"
                             className="d-inline-block align-top" height="40"></img>
                     </Navbar.Brand>{' '}
@@ -24,16 +24,16 @@ function RNavbar(props){
                 
                 <Navbar.Collapse>
                     <Container>
-                        <p className="RNavbarText">
+                        <div className="RNavbarText">
                             {title}
-                        </p>
+                        </div>
                     </Container>
                 </Navbar.Collapse>
 
                 
-                    <p className="RNavbarText">
+                    <div className="RNavbarText">
                         {children}
-                    </p>
+                    </div>
                 
                 {/*
                 <img src={logo} alt="something went wrong" className="RNavbarElement"></img>

@@ -2,7 +2,7 @@ import React from "react"; //,{ useEffect , useState }
 import { Parallax } from "react-parallax"; //, Background
 //import { render } from "@testing-library/react";
 //import {Button} from "react-bootstrap"
-import { Navbar, Nav} from "react-bootstrap"
+//import { Navbar, Nav} from "react-bootstrap"
 import "./Styles/HomePage.css";
 import logo from './Assets/logo.svg';
 import './Styles/App.css';
@@ -15,7 +15,7 @@ import AnimatedTitle from './Components/AnimatedTitle'
 import defaultParallaxImage from "./Assets/Alp.JPG"
 
 function HomePage(props) {
-    const {parallaxImage=defaultParallaxImage, renderNavbar=true, titleMessage="SCIENCE FOR HUMANITY"} = props //render navbar? or it is separate
+    const {parallaxImage=defaultParallaxImage, renderNavbar=true, titleMessage="SCIENCE FOR HUMANITY", children} = props //render navbar? or it is separate
     //const [initialized, setInitialized] = useState(false);
     //const [images, setImages] = useState([]);
     //const [layers, setLayers] = useState([]);
@@ -63,17 +63,8 @@ function HomePage(props) {
                     <AnimatedTitle message={titleMessage} />
 
                     <img src={logo} className="App-logo" alt="logo" />
-                    <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                    </p>
-                    <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >
-                    Learn React
-                    </a>
+                    
+                    {children}
                 </header>
             </div>
         </Parallax>
