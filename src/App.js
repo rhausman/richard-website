@@ -20,6 +20,7 @@ import secondBgImage from "./Assets/seated_pic.JPG"
 import githubIcon from "./Assets/github_icon.png"
 import youtubeIcon from "./Assets/youtube_icon.png"
 import linkedinIcon from "./Assets/linkedin_icon.png"
+import resume from "./Assets/RESUME.pdf"
 
 //global constant definition
 
@@ -63,7 +64,7 @@ function App() {
                 <NavDropdown title="Dropdown" id="collasible-nav-dropdown" className="dropdown"
                   renderMenuOnMount={true}
                 >
-                  <NavDropdown.Item href="#action/3.1">
+                  <NavDropdown.Item >
                     <ScrollLink
                     activeClass="active"
                     to="section2"
@@ -73,7 +74,7 @@ function App() {
                     duration={500}
                     >Experience</ScrollLink>
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                  <NavDropdown.Item href={resume}>Resume</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
@@ -104,7 +105,7 @@ function App() {
           id="section2"
           />
           <HomePage renderNavbar="false" parallaxImage={secondBgImage} titleMessage="EXPERIENCE" senseTitleOnScreen="true">
-            <AnimatedParagraph animationName="fadeInLeft" >
+            <AnimatedParagraph animationName="fadeInLeft" senseOnScreen="true" >
               Yeet ya,
               yeet ya
             </AnimatedParagraph>

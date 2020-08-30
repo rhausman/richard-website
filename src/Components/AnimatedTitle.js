@@ -16,7 +16,7 @@ const styles = {
 
 function AnimatedTitle({message, senseOnScreen="false", initialVisible=false}){
 
-    let [ref, inView] = useInView({
+    const [ref, inView] = useInView({
         /* Optional options */
         triggerOnce:true,
         threshold: 1.0
@@ -25,7 +25,7 @@ function AnimatedTitle({message, senseOnScreen="false", initialVisible=false}){
 
     return(
         <StyleRoot >
-            <div ref={ref} className="test" style={(senseOnScreen=="false"||inView)?styles.fadeInDownBig:{}}>
+            <div ref={ref} className="test" style={(senseOnScreen=="false"||inView)?styles.fadeInDownBig:{visibility:"hidden"}}>
                 <h2>{message}</h2>
             </div>
         </StyleRoot>
