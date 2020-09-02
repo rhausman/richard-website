@@ -11,6 +11,7 @@ import RNavbar from './Components/RNavbar'
 import HomePage from './HomePage';
 import IconLink from './Components/IconLink'
 import AnimatedParagraph from './Components/AnimatedParagraph'
+import SequentialRenderContainer from "./Components/SequentialRenderContainer"
 
 //assets
 //import logo from './Assets/logo.svg';
@@ -87,12 +88,18 @@ function App() {
             </RNavbar>
 
             <HomePage renderNavbar="false" senseTitleOnScreen="false">
-              <AnimatedParagraph animationName="fadeInLeft" >
-                I am simply someone with a profound love of both science and humanity;{"\n"}
-              </AnimatedParagraph>
-              <AnimatedParagraph animationName="fadeInRight" >
-                I want to use the technology at our disposal for the good of all people.
-              </AnimatedParagraph>
+              <SequentialRenderContainer delay={100}>
+                <AnimatedParagraph animationName="fadeInLeft" >
+                  I am simply someone with a profound love of both science and humanity;{"\n"}
+                </AnimatedParagraph>
+                <AnimatedParagraph animationName="fadeInRight" >
+                  I want to use the technology at our disposal for the good of all people.
+                </AnimatedParagraph>
+                <AnimatedParagraph animationName="fadeInUp">
+                    "Music can name the unnamable and communicate the unknowable"<br />
+                    -Leonard bernstein"
+                </AnimatedParagraph>
+              </SequentialRenderContainer>
             </HomePage>
           </>
           } />
