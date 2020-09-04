@@ -44,7 +44,8 @@ function HomePage(props) {
                 <div
                 style={{
                     position: "absolute",
-                    background: `white`,
+                    background: `aqua`,
+                    opacity:"50%",
                     left: "50%",
                     top: "47%",
                     borderRadius: "50%",
@@ -60,9 +61,16 @@ function HomePage(props) {
             <div>
         
                 <header className="App-header">
+                    
                     <AnimatedTitle message={titleMessage} senseOnScreen={senseTitleOnScreen} />
 
-                    <img src={logo} className="App-logo" alt="logo" />
+                    <img src={logo} className="App-logo" alt="logo" 
+                            style={{
+                                //position:"absolute",
+                                //left:"50%",
+                                //top:"25%"
+                            }} 
+                        />
                     
                     {children}
                 </header>
