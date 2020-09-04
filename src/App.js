@@ -54,59 +54,59 @@ function App() {
   return (
     <Router history={history}>
       
-      <ScrollPercentage
-        as="div"
-        onChange={(percentage, entry) => {percentageMem = scrollOnChange(autoscrollThreshold,percentage, percentageMem)}  }
-      >
-        <Route path="/" render={
-          ()=> <>
-            <RNavbar className="RNavbarTop" expand="lg" title="Welcome to the Beginning!">
-              <Container>
-                <NavDropdown title="Dropdown" id="collasible-nav-dropdown" className="dropdown"
-                  renderMenuOnMount={true}
-                >
-                  <NavDropdown.Item >
-                    <ScrollLink
-                    activeClass="active"
-                    to="section2"
-                    spy={true}
-                    smooth={true}
-                    offset={0}
-                    duration={500}
-                    >Experience</ScrollLink>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href={resume}>Resume</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                </NavDropdown>
-                {/*IconLinks: Youtube, Github, LinkedIn */}
-                <IconLink link="https://www.youtube.com/channel/UCYpNpdtcXBxc_zYCAFadnOg" image={youtubeIcon} />
-                <IconLink link="https://github.com/rhausman" image={githubIcon} />
-                <IconLink link="https://www.linkedin.com/in/richard-hausman-824035154/" image={linkedinIcon} />
-              </Container>
-            </RNavbar>
-
-            <HomePage renderNavbar="false" senseTitleOnScreen="false">
-              <SequentialRenderContainer delay={100}>
-                <AnimatedParagraph animationName="fadeInLeft" >
-                  I am simply someone with a profound love of both science and humanity;{"\n"}
-                </AnimatedParagraph>
-                <AnimatedParagraph animationName="fadeInRight" >
-                  I want to use the technology at our disposal for the good of all people.
-                </AnimatedParagraph>
-                <AnimatedParagraph animationName="fadeInUp">
-                    "Music can name the unnamable and communicate the unknowable"<br />
-                    -Leonard bernstein"
-                </AnimatedParagraph>
-              </SequentialRenderContainer>
-            </HomePage>
-          </>
-          } />
-      
-      
+      {/*
+        <ScrollPercentage
+          as="div"
+          onChange={(percentage, entry) => {percentageMem = scrollOnChange(autoscrollThreshold,percentage, percentageMem)}  }
+        >
+      */}
       <Route path="/" render={
-        ()=> <>
+        ()=> 
+        <>
+          <RNavbar className="RNavbarTop" expand="lg" title="Welcome to the Beginning!">
+            <Container>
+              <NavDropdown title="Dropdown" id="collasible-nav-dropdown" className="dropdown"
+                renderMenuOnMount={true}
+              >
+                <NavDropdown.Item >
+                  <ScrollLink
+                  activeClass="active"
+                  to="section2"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={500}
+                  >Experience</ScrollLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item href={resume}>Resume</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+              </NavDropdown>
+              {/*IconLinks: Youtube, Github, LinkedIn */}
+              <IconLink link="https://www.youtube.com/channel/UCYpNpdtcXBxc_zYCAFadnOg" image={youtubeIcon} />
+              <IconLink link="https://github.com/rhausman" image={githubIcon} />
+              <IconLink link="https://www.linkedin.com/in/richard-hausman-824035154/" image={linkedinIcon} />
+            </Container>
+          </RNavbar>
+
+          <HomePage renderNavbar="false" senseTitleOnScreen="false">
+            <SequentialRenderContainer delay={100}>
+              <AnimatedParagraph animationName="fadeInLeft" >
+                I am simply someone with a profound love of both science and humanity;{"\n"}
+              </AnimatedParagraph>
+              <AnimatedParagraph animationName="fadeInRight" >
+                I want to use the technology at our disposal for the good of all people.
+              </AnimatedParagraph>
+              <AnimatedParagraph animationName="fadeInUp">
+                  "Music can name the unnamable and communicate the unknowable"<br />
+                  -Leonard bernstein"
+              </AnimatedParagraph>
+            </SequentialRenderContainer>
+          </HomePage>
+      
+    
+    
           <Section
           title="Experience"
           id="section2"
@@ -118,10 +118,11 @@ function App() {
             </AnimatedParagraph>
           </HomePage>
         </>
-        } />
+      }/> {/*Route path*/}
       
-
+      {/*
       </ScrollPercentage>
+      */}
     </Router>
   );
 }

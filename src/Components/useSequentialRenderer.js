@@ -20,10 +20,10 @@ const reducer = (state, {i, type}) => {
 const defaults = {};
 
 export const useSequentialRenderer = (input, options = defaults) => {
-    console.log("T 2 "+Array.isArray(input), input)
+    //console.log("T 2 "+Array.isArray(input), input)
     const [state, dispatch] = useReducer(options.reducer || reducer, input);
 
-    console.log("T3 " + Array.isArray(state), state)
+    //console.log("T3 " + Array.isArray(state), state)
 
 
     const index = state.findIndex(a => !a[loadedProperty]); //find the first component that isn't loaded
@@ -37,7 +37,7 @@ export const useSequentialRenderer = (input, options = defaults) => {
 
         return { ...item, done }; //replace each item in sliced with the same object, but with a pointer to the done function
     });
-    console.log("T4 " + Array.isArray(items))
+    //console.log("T4 " + Array.isArray(items))
 
     return { items }; //return the remaining items with the done functions
 };

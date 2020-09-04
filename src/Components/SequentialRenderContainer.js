@@ -19,7 +19,7 @@ import AnimatedParagraphSequential from "./AnimatedParagraphSequential";
  */
 
 function SequentialRenderContainer({children, delay=1000}){
-    console.log("T1 "+Array.isArray(children))
+    //console.log("T1 "+Array.isArray(children))
     const { items } = useSequentialRenderer(children); //children is an array
 
     /*

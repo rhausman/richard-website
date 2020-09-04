@@ -31,7 +31,7 @@ function AnimatedParagraphSequential({children, animationName="fadeInDownBig", t
 
 
   useEffect(() => {
-      console.log("DELAYING")
+      //console.log("DELAYING")
       const timer = setTimeout(() => {
       setLoaded(true);
       const i= stableDone();
@@ -40,7 +40,7 @@ function AnimatedParagraphSequential({children, animationName="fadeInDownBig", t
       return () => clearTimeout(timer);
   }, [stableDone]);
   // ------------------
-  console.log("CHILDREN: "+children)
+  //console.log("CHILDREN: "+children)
 
   return(
     

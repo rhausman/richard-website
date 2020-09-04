@@ -10,12 +10,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //import custom components
 import RNavbar from './Components/RNavbar'
 import AnimatedTitle from './Components/AnimatedTitle'
+import ParallaxBar from './Components/ParallaxBar'
 
 //assets
 import defaultParallaxImage from "./Assets/Alp.JPG"
 
 function HomePage(props) {
-    const {parallaxImage=defaultParallaxImage, renderNavbar=true, titleMessage="SCIENCE FOR HUMANITY", senseTitleOnScreen="false", children} = props //render navbar? or it is separate
+    const {
+        parallaxImage=defaultParallaxImage, 
+        renderNavbar=true, 
+        titleMessage="SCIENCE FOR HUMANITY", 
+        senseTitleOnScreen="false", 
+        children} = props //render navbar? or it is separate
+    
     //const [initialized, setInitialized] = useState(false);
     //const [images, setImages] = useState([]);
     //const [layers, setLayers] = useState([]);
@@ -23,7 +30,7 @@ function HomePage(props) {
     // Conditionally render the navbar
     let navbar = <></>
     if(renderNavbar=="true"){
-        console.log("generating navbar")
+        //console.log("generating navbar")
         navbar=(
             <RNavbar className="RNavbarTop" expand="lg" title="Welcome to my Website">
                 Welcome to my Website
@@ -54,6 +61,7 @@ function HomePage(props) {
                     height: (percentage+0.05) * 500,
                 }}
                 />
+                <ParallaxBar percentage={percentage} />
             </div>
             )}
         >
