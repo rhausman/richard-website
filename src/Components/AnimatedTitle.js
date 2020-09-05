@@ -14,7 +14,7 @@ const styles = {
       }
   }
 
-function AnimatedTitle({message, senseOnScreen="false", initialVisible=false}){
+function AnimatedTitle({message, senseOnScreen="false", initialVisible=false, fontSize}){
 
     const [ref, inView] = useInView({
         /* Optional options */
@@ -26,7 +26,7 @@ function AnimatedTitle({message, senseOnScreen="false", initialVisible=false}){
     return(
         <StyleRoot >
             <div ref={ref} className="test" style={(senseOnScreen=="false"||inView)?styles.fadeInDownBig:{visibility:"hidden"}}>
-                <h2>{message}</h2>
+                <h2 style={{fontSize:fontSize}} >{message}</h2>
             </div>
         </StyleRoot>
     )

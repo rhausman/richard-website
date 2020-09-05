@@ -40,50 +40,32 @@ function HomePage(props) {
 
     return (
         <>
-        {navbar}
-        <Parallax
-            blur={5}
-            bgImage={parallaxImage}
-            bgImageAlt="Parallax Image"
-            strength={600}
-            renderLayer={percentage => (
-            <div>
-                <div
-                style={{
-                    position: "absolute",
-                    background: `aqua`,
-                    opacity:"50%",
-                    left: "50%",
-                    top: "47%",
-                    borderRadius: "50%",
-                    transform: "translate(-50%,-50%)",
-                    width: (percentage+0.05) * 500,
-                    height: (percentage+0.05) * 500,
-                }}
-                />
-                <ParallaxBar percentage={percentage} />
-            </div>
-            )}
-        >
+            {navbar}
+            <Parallax
+                blur={5}
+                bgImage={parallaxImage}
+                bgImageAlt="Parallax Image"
+                strength={600}
+                renderLayer={percentage => (
+                    <div style={{position:"absolute", top:"40%", left:"50%"}}>
+                        <ParallaxBar percentage={percentage} />
+                    </div>
+                )}
+            >
+                
+                <div>
             
-            <div>
-        
-                <header className="App-header">
-                    
-                    <AnimatedTitle message={titleMessage} senseOnScreen={senseTitleOnScreen} />
-
-                    <img src={logo} className="App-logo" alt="logo" 
-                            style={{
-                                //position:"absolute",
-                                //left:"50%",
-                                //top:"25%"
-                            }} 
-                        />
-                    
-                    {children}
-                </header>
-            </div>
-        </Parallax>
+                    <header className="App-header">
+                        
+                        <div style={{position:"absolute",top:"35%", left:"50%", transform:"translate(-50%,-50%)"}}>
+                            <AnimatedTitle message={titleMessage} senseOnScreen={senseTitleOnScreen} fontSize={50} />
+                        </div>              
+                        <br />
+                        <br />
+                        {children}
+                    </header>
+                </div>
+            </Parallax>
         </>
     );
   }
