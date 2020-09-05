@@ -12,6 +12,7 @@ import HomePage from './HomePage';
 import IconLink from './Components/IconLink'
 import AnimatedParagraph from './Components/AnimatedParagraph'
 import SequentialRenderContainer from "./Components/SequentialRenderContainer"
+import AnimatedDiv from "./Components/AnimatedDiv"
 
 //assets
 //import logo from './Assets/logo.svg';
@@ -112,6 +113,9 @@ function App() {
           id="section2"
           />
           <HomePage renderNavbar="false" parallaxImage={secondBgImage} titleMessage="EXPERIENCE" senseTitleOnScreen="true">
+            <AnimatedDiv animationName="fadeInUp" senseOnScreen={true} time={3}>
+              <p> Joe mama!!!!!</p>
+            </AnimatedDiv>
             <AnimatedParagraph animationName="fadeInLeft" senseOnScreen="true" >
               Yeet ya,
               yeet ya
