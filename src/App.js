@@ -13,6 +13,8 @@ import IconLink from './Components/IconLink'
 import AnimatedParagraph from './Components/AnimatedParagraph'
 import SequentialRenderContainer from "./Components/SequentialRenderContainer"
 import AnimatedDiv from "./Components/AnimatedDiv"
+import SequentialDivRenderContainer from "./Components/SequentialDivRenderContainer"
+import AnimatedDivSequential from "./Components/AnimatedDiv"
 
 //assets
 //import logo from './Assets/logo.svg';
@@ -93,13 +95,13 @@ function App() {
 
           <HomePage renderNavbar="false" senseTitleOnScreen="false">
             <SequentialRenderContainer delay={100}>
-              <AnimatedParagraph animationName="fadeInLeft" >
+              <AnimatedParagraph animationName="fadeInLeft" key={0}>
                 I am simply someone with a profound love of both science and humanity;{"\n"}
               </AnimatedParagraph>
-              <AnimatedParagraph animationName="fadeInRight" >
+              <AnimatedParagraph animationName="fadeInRight" key={1}>
                 I want to use the technology at our disposal for the good of all people.
               </AnimatedParagraph>
-              <AnimatedParagraph animationName="fadeInUp">
+              <AnimatedParagraph animationName="fadeInUp" key={2}>
                   "Music can name the unnamable and communicate the unknowable"<br />
                   -Leonard bernstein"
               </AnimatedParagraph>
@@ -113,13 +115,18 @@ function App() {
           id="section2"
           />
           <HomePage renderNavbar="false" parallaxImage={secondBgImage} titleMessage="EXPERIENCE" senseTitleOnScreen="true">
-            <AnimatedDiv animationName="fadeInUp" senseOnScreen={true} time={3}>
-              <p> Joe mama!!!!!</p>
-            </AnimatedDiv>
-            <AnimatedParagraph animationName="fadeInLeft" senseOnScreen="true" >
-              Yeet ya,
-              yeet ya
-            </AnimatedParagraph>
+            <SequentialDivRenderContainer>
+              
+              <AnimatedDiv animationName="fadeInLeft" senseOnScreen={false} time={0.5} >
+                <p>
+                  Yeet ya,
+                  yeet ya
+                </p>
+              </AnimatedDiv>
+              <AnimatedDiv animationName="fadeInUp" senseOnScreen={false} time={0.5}>
+                <p> Joe mama!!!!!</p>
+              </AnimatedDiv>
+            </SequentialDivRenderContainer>
           </HomePage>
         </>
       }/> {/*Route path*/}

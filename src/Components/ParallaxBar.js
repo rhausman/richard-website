@@ -14,7 +14,7 @@ function ParallaxBar({percentage}){
         height: percentage<=0?5:(percentage+0.05) * 20,
         transform: "translate(-50%,-50%)"
     }
-    console.log(percentage)
+    //console.log(percentage)
 
     return (
         <div style={styles} />

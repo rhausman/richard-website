@@ -11,7 +11,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-function AnimatedDiv({children, animationName="fadeInDownBig", time="1", delay=1000, senseOnScreen=false, done}){
+function AnimatedDivSequential({children, animationName="fadeInDownBig", time="1", delay=1000, senseOnScreen=false, done}){
   
   
   //const [loaded, setLoaded] = useState(false);
@@ -47,16 +47,17 @@ function AnimatedDiv({children, animationName="fadeInDownBig", time="1", delay=1
         threshold: 1.0
     })
 
-  return(
-    //loaded?(
-        <StyleRoot>
-            <div ref={ref} className="test" style={(!senseOnScreen||inView)?styles.animation:{visibility:"hidden"}}>
-                {children}
-            </div>
-        </StyleRoot>
-    //):<></>
-    
-  )
+    if(!senseOnScreen||inView) {
+        console.log("RENDERING!!!")
+        return(
+            <StyleRoot>
+                <div ref={ref} className="test" style={(!senseOnScreen||inView)?styles.animation:{}}>
+                    {children}
+                </div>
+            </StyleRoot>
+        )
+
+    } else return <div></div>
 }
 
-export default AnimatedDiv
+export default AnimatedDivSequential

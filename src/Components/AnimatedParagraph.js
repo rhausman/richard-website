@@ -27,7 +27,7 @@ function AnimatedParagraph({children, animationName="fadeInDownBig", time="1", s
 
     return(
         <StyleRoot>
-            <div ref={ref} className="test" style={(senseOnScreen=="false"||inView)?styles.animation:{}}>
+            <div ref={ref} className="test" style={(senseOnScreen=="false"||inView)?styles.animation:{visibility:"hidden"}}>
                 <p>{children}</p>
             </div>
         </StyleRoot>
