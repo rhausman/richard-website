@@ -31,22 +31,22 @@ function SequentialDivRenderContainer({children, delay=1000, senseOnScreen=false
    //console.log("PREPPING")
 
    //console.log("item list is array: "+Array.isArray(e))
-   if((!senseOnScreen||inView)){
+//   if((!senseOnScreen||inView)){
 
         return (
-        <div ref={ref} >
-            {items.map((animatedDiv, i) => {
-            const _props = animatedDiv.props
-            return (
-                <AnimatedDivSequential done={() => animatedDiv.done()} animationName={_props.animationName} delay={delay} >
-                    {/* Display the animated paragraph with its message */}
-                    {_props.children} 
-                </AnimatedDivSequential>
-            );
-            })}
-        </div>
+            <>
+                {items.map((animatedDiv, i) => {
+                const _props = animatedDiv.props
+                return (
+                    <AnimatedDivSequential done={() => animatedDiv.done()} animationName={_props.animationName} delay={delay} >
+                        {/* Display the animated paragraph with its message */}
+                        {_props.children} 
+                    </AnimatedDivSequential>
+                );
+                })}
+            </>
         );
-   } else return <></>
+//   } else return <></>
 }
 
 export default SequentialDivRenderContainer

@@ -115,13 +115,15 @@ function App() {
           id="section2"
           />
           <HomePage renderNavbar="false" parallaxImage={secondBgImage} titleMessage="EXPERIENCE" senseTitleOnScreen="true">
-            <SequentialDivRenderContainer>
+            <SequentialDivRenderContainer delay={100}>
               
               <AnimatedDiv animationName="fadeInLeft" senseOnScreen={false} time={0.5} >
-                <p>
-                  Yeet ya,
-                  yeet ya
-                </p>
+                <div>
+                  <p>
+                    Yeet ya,
+                    yeet ya
+                  </p>
+                </div>
               </AnimatedDiv>
               <AnimatedDiv animationName="fadeInUp" senseOnScreen={false} time={0.5}>
                 <p> Joe mama!!!!!</p>

@@ -13,21 +13,15 @@ function sleep(ms) {
 
 function AnimatedDivSequential({children, animationName="fadeInDownBig", time="1", delay=1000, senseOnScreen=false, done}){
   
-  
-  //const [loaded, setLoaded] = useState(false);
-  //const stableDone = useCallback(done, [])
-
-  const styles = {
-      animation: {
-        animation: "x "+time+"s",
-        animationName: Radium.keyframes(animationsDict[animationName], animationName)
-      }
-    }
-
-    
-    // Only for use with useSequentialRenderer hook callback
-
-    /*
+    const styles = {
+        animation: {
+            animation: "x "+time+"s",
+            animationName: Radium.keyframes(animationsDict[animationName], animationName)
+        }
+        }
+    // Sequential Rendering
+    const [loaded, setLoaded] = useState(false);
+    const stableDone = useCallback(done, [])
     useEffect(() => {
         //console.log("DELAYING")
         const timer = setTimeout(() => {
@@ -37,8 +31,8 @@ function AnimatedDivSequential({children, animationName="fadeInDownBig", time="1
     
 
       return () => clearTimeout(timer);
-  }, [stableDone]);
-  */
+    }, [stableDone]);
+  
   // ------------------
   //console.log("CHILDREN: "+children)
     const [ref, inView] = useInView({
@@ -47,17 +41,16 @@ function AnimatedDivSequential({children, animationName="fadeInDownBig", time="1
         threshold: 1.0
     })
 
-    if(!senseOnScreen||inView) {
-        console.log("RENDERING!!!")
-        return(
-            <StyleRoot>
-                <div ref={ref} className="test" style={(!senseOnScreen||inView)?styles.animation:{}}>
-                    {children}
-                </div>
-            </StyleRoot>
-        )
+    //style={(!senseOnScreen||inView)?styles.animation:{visibility:"hidden"}}
+    
+    return loaded?(
+        <StyleRoot>
+            <div ref={ref} className="test" style={(!senseOnScreen||inView)?styles.animation:{visibility:"hidden"}}>
+                {children}
+            </div>
+        </StyleRoot>
+    ):<></>
 
-    } else return <div></div>
 }
 
 export default AnimatedDivSequential
