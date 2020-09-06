@@ -4,7 +4,8 @@ import { Router, Route } from "react-router-dom"; //, Link
 import { Link as ScrollLink} from "react-scroll"; //Element, animateScroll as scroll 
 import { ScrollPercentage } from 'react-scroll-percentage' //useScrollPercentage, 
 import { createBrowserHistory as createHistory } from "history";
-import { NavDropdown, Container} from "react-bootstrap"
+import { NavDropdown, Container, Jumbotron} from "react-bootstrap"
+
 //import custom components
 import Section from './Components/Section'
 import RNavbar from './Components/RNavbar'
@@ -14,7 +15,7 @@ import AnimatedParagraph from './Components/AnimatedParagraph'
 import SequentialRenderContainer from "./Components/SequentialRenderContainer"
 import AnimatedDiv from "./Components/AnimatedDiv"
 import SequentialDivRenderContainer from "./Components/SequentialDivRenderContainer"
-import AnimatedDivSequential from "./Components/AnimatedDiv"
+import RenderOnView from "./Components/RenderOnView"
 
 //assets
 //import logo from './Assets/logo.svg';
@@ -25,6 +26,8 @@ import githubIcon from "./Assets/github_icon.png"
 import youtubeIcon from "./Assets/youtube_icon.png"
 import linkedinIcon from "./Assets/linkedin_icon.png"
 import resume from "./Assets/RESUME.pdf"
+//pics for experience section
+
 
 //global constant definition
 
@@ -115,20 +118,22 @@ function App() {
           id="section2"
           />
           <HomePage renderNavbar="false" parallaxImage={secondBgImage} titleMessage="EXPERIENCE" senseTitleOnScreen="true">
-            <SequentialDivRenderContainer delay={100} senseOnScreen={true}>
-              
-              <AnimatedDiv animationName="fadeInLeft" senseOnScreen={false} time={0.5} >
-                <div>
-                  <p>
-                    Yeet ya,
-                    yeet ya
-                  </p>
-                </div>
-              </AnimatedDiv>
-              <AnimatedDiv animationName="fadeInUp" senseOnScreen={false} time={0.5}>
-                <p> Joe mama!!!!!</p>
-              </AnimatedDiv>
-            </SequentialDivRenderContainer>
+            <RenderOnView>
+              <SequentialDivRenderContainer delay={100} senseOnScreen={true}>
+                
+                <AnimatedDiv animationName="fadeInLeft" senseOnScreen={false} time={0.5} >
+                  <div>
+                    <p>
+                      Yeet ya,
+                      yeet ya
+                    </p>
+                  </div>
+                </AnimatedDiv>
+                <AnimatedDiv animationName="fadeInUp" senseOnScreen={false} time={0.5}>
+                  <p> Joe mama!!!!!</p>
+                </AnimatedDiv>
+              </SequentialDivRenderContainer>
+            </RenderOnView>
           </HomePage>
         </>
       }/> {/*Route path*/}

@@ -38,7 +38,7 @@ function SequentialDivRenderContainer({children, delay=1000, senseOnScreen=false
                 {items.map((animatedDiv, i) => {
                 const _props = animatedDiv.props
                 return (
-                    <AnimatedDivSequential done={() => animatedDiv.done()} animationName={_props.animationName} delay={delay} >
+                    <AnimatedDivSequential done={() => animatedDiv.done()} animationName={_props.animationName} delay={delay} key={i}>
                         {/* Display the animated paragraph with its message */}
                         {_props.children} 
                     </AnimatedDivSequential>
