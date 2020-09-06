@@ -63,3 +63,11 @@
   display: block;
 }
 
+.experience-image{
+  border-radius:8px;
+  height:400px;
+}
+
+.jumbo-translucent{
+  background:"rgba(62, 224, 191, 0.8)"
+}

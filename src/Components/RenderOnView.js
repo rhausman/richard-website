@@ -33,9 +33,11 @@ let Block = (props) => {
 }
 */
 const Block = (props) => {
-    const { inViewport, forwardedRef, _props} = props;
-    console.log(forwardedRef)
-    const toRender = inViewport ? _props.children : null;
+    const { inViewport, enterCount, forwardedRef, onlyOnce, _props} = props;
+    let {children, placeHolderHeight, placeHolderWidth} = _props
+    console.log(enterCount)
+    //if it's in the viewport AND
+    const toRender = inViewport&&(!onlyOnce||enterCount<2) ? children : <div />; //placeholder
     return (
       <div className="viewport-block" ref={forwardedRef}>
         { toRender }
@@ -46,8 +48,8 @@ const Block = (props) => {
 const ViewportBlock = handleViewport(Block, /** options: {}, config: {} **/);
 
 function RenderOnView(props){
+    const {onlyOnce=false} = props
     //console.log("T1 "+Array.isArray(children))
-
 
 
    //console.log("PREPPING")
@@ -56,11 +58,13 @@ function RenderOnView(props){
 
    //example below
    return (
-   <div>
-   <ViewportBlock _props={props} onEnterViewport={() => console.log('enter')} onLeaveViewport={() => console.log('leave')} />
- </div>
+    <div>
+    <ViewportBlock _props={props} onlyOnce={onlyOnce} onEnterViewport={() => console.log('enter')} onLeaveViewport={() => console.log('leave')} />
+    </div>
    )
 
 }
 
 export default RenderOnView
+
+//960 1981

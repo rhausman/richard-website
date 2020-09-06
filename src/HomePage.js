@@ -20,6 +20,9 @@ function HomePage(props) {
         parallaxImage=defaultParallaxImage, 
         renderNavbar=true, 
         titleMessage="SCIENCE FOR HUMANITY", 
+        titleTop, titleLeft,
+        parallaxBarTop="40%",
+        parallaxBarLeft="50%",
         senseTitleOnScreen="false", 
         children} = props //render navbar? or it is separate
     
@@ -47,7 +50,7 @@ function HomePage(props) {
                 bgImageAlt="Parallax Image"
                 strength={600}
                 renderLayer={percentage => (
-                    <div style={{position:"absolute", top:"40%", left:"50%"}}>
+                    <div style={{position:"absolute", top:parallaxBarTop, left:parallaxBarLeft}}> 
                         <ParallaxBar percentage={percentage} />
                     </div>
                 )}
@@ -57,7 +60,7 @@ function HomePage(props) {
             
                     <header className="App-header">
                         
-                        <div style={{position:"absolute",top:"35%", left:"50%", transform:"translate(-50%,-50%)"}}>
+                        <div style={{}}  >{/* {{position:"absolute",top:"35%", left:"50%", transform:"translate(-50%,-50%)"}}> */}
                             <AnimatedTitle message={titleMessage} senseOnScreen={senseTitleOnScreen} fontSize={50} />
                         </div>              
                         <br />
