@@ -4,6 +4,8 @@ import {Card, CardDeck, Button, Jumbotron, Container, Row} from "react-bootstrap
 import logo from "./../Assets/logo.svg"
 
 import marked from "marked" //for putting markdown in blogpost pages (not used in this file)
+//custom components and assets
+import AnimatedDiv from "./AnimatedDiv"
 
 function getPreviewCards(bPostPreviews, number=false){
     if(number){
@@ -52,7 +54,9 @@ const BlogPreviewBench = () => {
     return (
         <Jumbotron style={{height:300}}>
             <Row className="justify-content-md-center">
-                <h1>Latest posts!</h1>
+                <AnimatedDiv animationName="fadeInLeft" senseOnScreen={true} time={1.0} >
+                    <h1>Latest posts!</h1>
+                </AnimatedDiv>
             </Row>
             <br/>
             {
