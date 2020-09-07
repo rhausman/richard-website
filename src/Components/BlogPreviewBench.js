@@ -12,15 +12,15 @@ function getPreviewCards(bPostPreviews, number=false){
     return(
         bPostPreviews.map(
             function (item, i){
-                const {id, title, md_file_path, preview_img_path} = item
+                const {id, title, md_file_path, preview_img_path, description} = item
+                console.log(preview_img_path)
                 return(
                     <Card style={{ width: '18rem' }} key={i} >
-                        <Card.Img variant="top" src={logo} style={{}} />
+                        <Card.Img variant="top" src={preview_img_path} style={{}} />
                         <Card.Body>
                             <Card.Title>{title}</Card.Title>
                             <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                                {description}
                             </Card.Text>
                             <Button variant="primary">Go somewhere</Button>
                         </Card.Body>
@@ -63,7 +63,7 @@ const BlogPreviewBench = () => {
                     {getPreviewCards(blogPostPreviews, 3)}
                 </CardDeck>
                     
-                ):<div></div>
+                ):<div style={{height:300}}></div>
             }
         </Jumbotron>
     );
