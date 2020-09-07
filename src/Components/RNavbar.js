@@ -16,12 +16,14 @@ function RNavbar(props){
             <Navbar bg = {bg} expand={expand} className={className} sticky={sticky}>
                 <Container  fluid className="RNavbarBrandText">
                 
-                <Col >
+                <Col>
+                
                 <Navbar.Brand  onClick={scrollTop} style={{cursor: "pointer"}}>
                         <img src={logo} alt="Something went wrong"
-                        className="d-inline-block align-top" height="40"></img>
-                        <div className="RNavbarBrandText"> Richard Hausman</div>
+                        className="d-inline-block align-top" height="80"></img>
+                        {/*<div className="RNavbarBrandText"> Richard Hausman</div> */}
                 </Navbar.Brand>{' '}
+                
                 
                 </Col>
                 

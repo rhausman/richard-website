@@ -121,7 +121,7 @@ function App() {
           />
           <HomePage 
             renderNavbar="false" parallaxImage={secondBgImage} titleMessage="EXPERIENCE" senseTitleOnScreen="true"
-            parallaxBarTop="5%"
+            parallaxBarTop="5%" 
           >
             <div style={{paddingTop:"60px"}}>
               <RenderOnView placeHolderHeight={1981} placeHolderWidth={980}  >
@@ -162,6 +162,11 @@ function App() {
                               <a href="https://www.pharm.stonybrook.edu/faculty/t/talmage">
                                 Learn more about the work of Dr. Role and Dr. Talmage.
                               </a>
+                              <br/>
+                              <a href="https://www.linkedin.com/in/richard-hausman-824035154/">
+                                Learn more about the specific project that I completed.
+                              </a>
+                              
                               <br />
                               The world of memory formation is absolutely fascinating.
                             </p>

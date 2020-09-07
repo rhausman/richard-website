@@ -20,7 +20,7 @@ function HomePage(props) {
         parallaxImage=defaultParallaxImage, 
         renderNavbar=true, 
         titleMessage="SCIENCE FOR HUMANITY", 
-        titleTop, titleLeft,
+        placeHoldHeight=false,
         parallaxBarTop="40%",
         parallaxBarLeft="50%",
         senseTitleOnScreen="false", 
@@ -56,7 +56,7 @@ function HomePage(props) {
                 )}
             >
                 
-                <div>
+                <div style={placeHoldHeight?{height:placeHoldHeight}:{}} >
             
                     <header className="App-header">
                         
