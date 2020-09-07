@@ -7,9 +7,11 @@ import RNavbar from "./RNavbar"
 function Section({ title, id, children}) {
   return (
     <div id={id}>
+      {/*
       <RNavbar className="RNavbarTop" expand="lg" title={title}>
         {children}
       </RNavbar>
+      */}
     </div>
   );
 }

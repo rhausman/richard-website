@@ -1,5 +1,5 @@
 import React from "react"
-import { Navbar, Container} from "react-bootstrap" //Nav,
+import { Navbar, Container, Nav, Row, Col} from "react-bootstrap" //Nav,
 import './../Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //assets
@@ -14,33 +14,43 @@ function RNavbar(props){
     const {bg, expand="lg",className, children, title, sticky="none"} = props
     return (
             <Navbar bg = {bg} expand={expand} className={className} sticky={sticky}>
-                <Navbar.Collapse id="brand" className="RNavbarBrandText">
-                    <Navbar.Brand  onClick={scrollTop} style={{cursor: "pointer"}}>
-                            <img src={logo} alt="Something went wrong"
-                            className="d-inline-block align-top" height="40"></img>
-                    </Navbar.Brand>{' '}
-                    Richard Hausman
-                </Navbar.Collapse>
+                <Container  fluid className="RNavbarBrandText">
                 
-                <Navbar.Collapse>
-                    <Container>
+                <Col >
+                <Navbar.Brand  onClick={scrollTop} style={{cursor: "pointer"}}>
+                        <img src={logo} alt="Something went wrong"
+                        className="d-inline-block align-top" height="40"></img>
+                        <div className="RNavbarBrandText"> Richard Hausman</div>
+                </Navbar.Brand>{' '}
+                
+                </Col>
+                
+                
+                    <Col>
+                    <Nav className="mr-auto" >
+                    
+                            <div className="RNavbarText">
+                                <p className="text-center mt-4 mb-4">
+                                {title}
+                                </p>
+                            </div>
+                    
+                    </Nav>
+                    </Col>
+                    <Col>
+                    <Nav className="mr-auto">
                         <div className="RNavbarText">
-                            {title}
+                            {children}
                         </div>
-                    </Container>
-                </Navbar.Collapse>
-
-                
-                    <div className="RNavbarText">
-                        {children}
-                    </div>
-                
-                {/*
-                <img src={logo} alt="something went wrong" className="RNavbarElement"></img>
-                */}
-                
-                
-
+                    </Nav>
+                    </Col>
+                    
+                    {/*
+                    <img src={logo} alt="something went wrong" className="RNavbarElement"></img>
+                    */}
+                    
+                    
+                </Container>
             </Navbar>
         )
 
