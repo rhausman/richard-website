@@ -16,6 +16,7 @@ import SequentialRenderContainer from "./Components/SequentialRenderContainer"
 import AnimatedDiv from "./Components/AnimatedDiv"
 import SequentialDivRenderContainer from "./Components/SequentialDivRenderContainer"
 import RenderOnView from "./Components/RenderOnView"
+import BlogPreviewBench from "./Components/BlogPreviewBench"
 
 //assets
 //import logo from './Assets/logo.svg';
@@ -220,6 +221,10 @@ function App() {
               </RenderOnView>
             </div>
           </HomePage>
+
+          <BlogPreviewBench path="./">
+
+          </BlogPreviewBench>
         </>
       }/> {/*Route path*/}
       
