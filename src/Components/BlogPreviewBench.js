@@ -13,7 +13,6 @@ function getPreviewCards(bPostPreviews, number=false){
         bPostPreviews.map(
             function (item, i){
                 const {id, title, md_file_path, preview_img_path, description} = item
-                console.log(preview_img_path)
                 return(
                     <Card style={{ width: '18rem' }} key={i} >
                         <Card.Img variant="top" src={preview_img_path} style={{}} />
@@ -36,8 +35,8 @@ const BlogPreviewBench = () => {
     const [blogPostPreviews, setBlogPostPreviews] = useState({});
   
     async function fetchData() {
-      const res = await fetch("http://localhost:8000/blogPostPreviews/");
-      res
+        const res = await fetch("http://localhost:8000/blogPostPreviews/");
+        res
         .json()
         .then(res => setBlogPostPreviews(res))
         .catch(err => setErrors(err));
@@ -45,7 +44,7 @@ const BlogPreviewBench = () => {
   
     useEffect(() => {
       fetchData();
-    });
+    }, []);
 
     //make a list of blog Preview Cards, starting with the most recent post
     // (the data comes in reverse chronological order of creation)
