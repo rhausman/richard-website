@@ -37,7 +37,7 @@ function SequentialRenderContainer({children, delay=1000}){
         {items.map((animatedParagraph, i) => {
           const _props = animatedParagraph.props
           return (
-            <AnimatedParagraphSequential done={() => animatedParagraph.done()} animationName={_props.animationName} delay={delay}>
+            <AnimatedParagraphSequential done={() => animatedParagraph.done()} animationName={_props.animationName} delay={delay} key={i}>
                 {/* Display the animated paragraph with its message */}
                 {_props.children} 
             </AnimatedParagraphSequential>
