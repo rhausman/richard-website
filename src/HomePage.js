@@ -60,7 +60,7 @@ function HomePage(props) {
             
                     <header className="App-header">
                         
-                        <div style={{}}  >{/* {{position:"absolute",top:"35%", left:"50%", transform:"translate(-50%,-50%)"}}> */}
+                        <div style={{position:"absolute",top:parallaxBarTop, left:parallaxBarLeft, transform:"translate(-50%,-100%)"}}>
                             <AnimatedTitle message={titleMessage} senseOnScreen={senseTitleOnScreen} fontSize={50} />
                         </div>              
                         <br />

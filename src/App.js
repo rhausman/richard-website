@@ -123,84 +123,87 @@ function App() {
             renderNavbar="false" parallaxImage={secondBgImage} titleMessage="EXPERIENCE" senseTitleOnScreen="true"
             parallaxBarTop="5%"
           >
-            <RenderOnView placeHolderHeight={1981} placeHolderWidth={980} >
-              <Container id="Experience Jumbotrons" >
-                <SequentialDivRenderContainer delay={100} senseOnScreen={true}>
-                
-                  <AnimatedDiv animationName="fadeInLeft" senseOnScreen={false} time={1.0} >
-                    <Jumbotron style={{background:"rgba(62, 224, 191, 0.8)"}} >
-                      <Row className="justify-content-md-center">
-                        <h1 style={{color:"black"}}>Steller lab - Rockefeller SSRP</h1>
-                      </Row>
-                      <Row>
-                        <Col><img src={rockefeller_img} className="experience-image" /></Col>
-                        <Col>
-                          <p style={{color:"black"}} >
-                            I studied protein degredadion pathways 
-                            at the Steller lab at Rockefeller University.<br /> 
-                            <a href="https://drive.google.com/file/d/0B6oDE6tEAYrUNGhjaHVnQVlveFU/view?usp=sharing">
-                              Here's a poster that summarizes my project.
-                            </a>
-                          </p>
-                        </Col>
-                      </Row>
-                      
-                    </Jumbotron>
-                  </AnimatedDiv>
-                  <AnimatedDiv animationName="fadeInRight" senseOnScreen={false} time={1.0} >
-                    <Jumbotron style={{background:"rgba(62, 224, 191, 0.8)"}}>
-                      <Row className="justify-content-md-center">
-                        <h1 style={{color:"black"}}>Rolemage lab - Simons SSRP</h1>
-                      </Row>
-                      <Row>
-                        <Col>
-                          <p style={{color:"black"}} >
-                            I studied the formation of fear memories in mouse 
-                            at the "Rolemage" lab at Stony Brook University as part of the Simons Foundation's Science 
-                            Research Program<br /> 
-                            <a href="https://www.pharm.stonybrook.edu/faculty/t/talmage">
-                              Learn more about the work of Dr. Role and Dr. Talmage.
-                            </a>
-                            <br />
-                            The world of memory formation is absolutely fascinating.
-                          </p>
-                        </Col>
-                        <Col><img src={stonybrook_img} className="experience-image" /></Col>
-                      </Row>
-                      
-                    </Jumbotron>
-                  </AnimatedDiv>
-                  <AnimatedDiv animationName="fadeInDownBig" senseOnScreen={false} time={1.0} >
-                    <Jumbotron style={{background:"rgba(62, 224, 191, 0.8)"}}>
-                      <Row className="justify-content-md-center">
-                        <h1 style={{color:"black"}}>The Not Company</h1>
-                      </Row>
-                      <Row className="justify-content-md-center">
+            <div style={{paddingTop:"60px"}}>
+              <RenderOnView placeHolderHeight={1981} placeHolderWidth={980}  >
+                <Container id="Experience Jumbotrons" >
+                  <SequentialDivRenderContainer delay={100} senseOnScreen={true}>
+                  
+                    <AnimatedDiv animationName="fadeInLeft" senseOnScreen={false} time={1.0} >
+                      <Jumbotron style={{background:"rgba(62, 224, 191, 0.8)"}} >
+                        <Row className="justify-content-md-center">
+                          <h1 style={{color:"black"}}>Steller lab - Rockefeller SSRP</h1>
+                        </Row>
+                        <Row>
+                          <Col><img src={rockefeller_img} className="experience-image" /></Col>
+                          <Col>
+                            <p style={{color:"black"}} >
+                              I studied protein degredadion pathways 
+                              at the Steller lab at Rockefeller University.<br /> 
+                              <a href="https://drive.google.com/file/d/0B6oDE6tEAYrUNGhjaHVnQVlveFU/view?usp=sharing">
+                                Here's a poster that summarizes my project.
+                              </a>
+                            </p>
+                          </Col>
+                        </Row>
                         
-                          <p style={{color:"black"}} >
-                            I worked with a team to replace meat and dairy-<b>deliciously</b>-using Machine Learning
-                            at <b>The Not Company</b> <br/>
-                          </p>
-                      </Row>
-                      <Row className="justify-content-md-center">
-                        <Button variant="success" 
-                              href="https://www.notco.com">
-                              Click Here to learn More.
-                            </Button>
-                      </Row>
-                      <br />
-                      <Row className="justify-content-md-center">
+                      </Jumbotron>
+                    </AnimatedDiv>
+                    <AnimatedDiv animationName="fadeInRight" senseOnScreen={false} time={1.0} >
+                      <Jumbotron style={{background:"rgba(62, 224, 191, 0.8)"}}>
+                        <Row className="justify-content-md-center">
+                          <h1 style={{color:"black"}}>Rolemage lab - Simons SSRP</h1>
+                        </Row>
+                        <Row>
+                          <Col>
+                            <p style={{color:"black"}} >
+                              I studied the formation of fear memories in mouse 
+                              at the "Rolemage" lab at Stony Brook University as part of the Simons Foundation's Science 
+                              Research Program<br /> 
+                              <a href="https://www.pharm.stonybrook.edu/faculty/t/talmage">
+                                Learn more about the work of Dr. Role and Dr. Talmage.
+                              </a>
+                              <br />
+                              The world of memory formation is absolutely fascinating.
+                            </p>
+                          </Col>
+                          <Col><img src={stonybrook_img} className="experience-image" /></Col>
+                        </Row>
                         
+                      </Jumbotron>
+                    </AnimatedDiv>
+                    <AnimatedDiv animationName="fadeInDownBig" senseOnScreen={false} time={3.0} >
+                      <Jumbotron style={{background:"rgba(62, 224, 191, 0.8)"}}>
+                        <Row className="justify-content-md-center">
+                          <h1 style={{color:"black"}}>The Not Company</h1>
+                        </Row>
+                        <Row className="justify-content-md-center">
+                          
+                            <p style={{color:"black"}} >
+                              I worked with a team to replace meat and dairy-<b>deliciously</b>-using Machine Learning
+                              at <b>The Not Company.</b> Data curation, feature engineering, training and deploying models (on Kubeflow),
+                              working interdepartmentally to iterate on the models, and more. <br/>
+                            </p>
+                        </Row>
+                        <Row className="justify-content-md-center">
+                          <Button variant="success" 
+                                href="https://www.notco.com">
+                                Click Here to learn More
+                              </Button>
+                        </Row>
+                        <br />
+                        <Row className="justify-content-md-center">
+                          
+                          
+                            <img src={notco_img} className="experience-image" />
+                        </Row>
                         
-                          <img src={notco_img} className="experience-image" />
-                      </Row>
+                      </Jumbotron>
                       
-                    </Jumbotron>
-                    
-                  </AnimatedDiv>
-                </SequentialDivRenderContainer>
-              </Container>
-            </RenderOnView>
+                    </AnimatedDiv>
+                  </SequentialDivRenderContainer>
+                </Container>
+              </RenderOnView>
+            </div>
           </HomePage>
         </>
       }/> {/*Route path*/}
