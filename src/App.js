@@ -82,7 +82,7 @@ function App() {
                   to="section2"
                   spy={true}
                   smooth={true}
-                  offset={0}
+                  offset={-100}
                   duration={500}
                   >Experience</ScrollLink>
                 </NavDropdown.Item>
