@@ -138,10 +138,16 @@ function App() {
                           <Col>
                             <p style={{color:"black"}} >
                               I studied protein degredadion pathways 
-                              at the Steller lab at Rockefeller University.<br /> 
-                              <a href="https://drive.google.com/file/d/0B6oDE6tEAYrUNGhjaHVnQVlveFU/view?usp=sharing">
+                              at the Steller lab at Rockefeller University. In <i>Drosophila Melanogaster</i>,
+                              using a combination of <i>in vivo</i> and <i>in vitro</i> techniques including immunohistochemical microscopy,
+                              protein expression in <i>E. Coli</i> and S2 cells, Western Blots, breeding lines of flies, 
+                              and quantitative analysis in the context of a controlled experiment.
+                              <br /> 
+                              <Button variant="success" 
+                                href="https://drive.google.com/file/d/0B6oDE6tEAYrUNGhjaHVnQVlveFU/view?usp=sharing">
                                 Here's a poster that summarizes my project.
-                              </a>
+                              </Button>
+                              
                             </p>
                           </Col>
                         </Row>
@@ -159,16 +165,20 @@ function App() {
                               I studied the formation of fear memories in mouse 
                               at the "Rolemage" lab at Stony Brook University as part of the Simons Foundation's Science 
                               Research Program<br /> 
-                              <a href="https://www.pharm.stonybrook.edu/faculty/t/talmage">
+                              <br />
+                              <Button variant="primary" 
+                                href="https://www.pharm.stonybrook.edu/faculty/t/talmage">
                                 Learn more about the work of Dr. Role and Dr. Talmage.
-                              </a>
-                              <br/>
-                              <a href="https://www.linkedin.com/in/richard-hausman-824035154/">
+                              </Button>
+                              <br /> <br />
+                              <Button variant="success" 
+                                href="https://www.linkedin.com/in/richard-hausman-824035154/">
                                 Learn more about the specific project that I completed.
-                              </a>
+                              </Button>
                               
                               <br />
-                              The world of memory formation is absolutely fascinating.
+                              <br />
+                              The world of memory formation, storage, and recall is absolutely fascinating.
                             </p>
                           </Col>
                           <Col><img src={stonybrook_img} className="experience-image" /></Col>
