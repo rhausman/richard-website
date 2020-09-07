@@ -88,7 +88,18 @@ function App() {
                   >Experience</ScrollLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item href={resume}>Resume</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  <ScrollLink
+                    activeClass="active"
+                    to="section3"
+                    spy={true}
+                    smooth={true}
+                    offset={-100}
+                    duration={500}
+                  >
+                    Blog Posts
+                  </ScrollLink>
+                </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
               </NavDropdown>
@@ -123,6 +134,7 @@ function App() {
           <HomePage 
             renderNavbar="false" parallaxImage={secondBgImage} titleMessage="EXPERIENCE" senseTitleOnScreen="true"
             parallaxBarTop="5%" 
+            placeHoldHeight={2200}
           >
             <div style={{paddingTop:"60px"}}>
               <RenderOnView placeHolderHeight={1981} placeHolderWidth={980}  >
@@ -221,6 +233,11 @@ function App() {
               </RenderOnView>
             </div>
           </HomePage>
+
+          <Section
+            title="Latest Posts"
+            id="section3"
+          />
 
           <BlogPreviewBench path="./">
 
