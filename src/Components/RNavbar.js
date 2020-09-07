@@ -11,9 +11,9 @@ const scrollTop = () =>{
  };
 
 function RNavbar(props){
-    const {bg, expand="lg",className, children, title} = props
+    const {bg, expand="lg",className, children, title, sticky="none"} = props
     return (
-            <Navbar bg = {bg} expand={expand} className={className}>
+            <Navbar bg = {bg} expand={expand} className={className} sticky={sticky}>
                 <Navbar.Collapse id="brand" className="RNavbarBrandText">
                     <Navbar.Brand  onClick={scrollTop} style={{cursor: "pointer"}}>
                             <img src={logo} alt="Something went wrong"

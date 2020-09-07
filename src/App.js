@@ -71,7 +71,7 @@ function App() {
       <Route path="/" render={
         ()=> 
         <>
-          <RNavbar className="RNavbarTop" expand="lg" title="Welcome to the Beginning!">
+          <RNavbar className="RNavbarTop" expand="lg" title="Welcome to the Beginning!" sticky="top">
             <Container>
               <NavDropdown title="Sections" id="collasible-nav-dropdown" className="dropdown"
                 renderMenuOnMount={true}
