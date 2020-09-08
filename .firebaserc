@@ -1,5 +1,6 @@
 {
   "projects": {
-    "richard_website_frontend": "richard-website-1d919"
+    "richard_website_frontend": "richard-website-1d919",
+    "default": "richard-website-1d919"
   }
 }
