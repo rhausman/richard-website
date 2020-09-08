@@ -24,7 +24,7 @@ import linkedinIcon from "./../Assets/linkedin_icon.png"
 
 
 //assets
-import defaultParallaxImage from "./../Assets/Alp.JPG"
+import defaultParallaxImage from "./../Assets/taj_0.jpg"
 
 
 const importAll = (r) => r.keys().map(r);
