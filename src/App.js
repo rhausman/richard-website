@@ -106,7 +106,6 @@ function App() {
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href={resume}>Resume</NavDropdown.Item>
-                  <NavDropdown.Item href="/about">About</NavDropdown.Item>
                 </NavDropdown>
                 {/*IconLinks: Youtube, Github, LinkedIn */}
                 <IconLink link="https://www.youtube.com/channel/UCYpNpdtcXBxc_zYCAFadnOg" image={youtubeIcon} />
@@ -249,7 +248,6 @@ function App() {
             </BlogPreviewBench>
           </>
         }/> {/*Route path*/}
-        <Route exact path="/about" component={About}/>
         <BlogPostRoutes />
 
         
