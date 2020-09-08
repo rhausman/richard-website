@@ -6,8 +6,8 @@ import { BrowserRouter as Router, Route, Switch, Link, useParams} from "react-ro
 import logo from "./../Assets/logo.svg"
 
 //custom components and assets
-import AnimatedDiv from "./AnimatedDiv"
 import BlogPostPage from "./BlogPostPage"
+import backBgImage from "./../Assets/taj_0.jpg"
 
 const BlogPostRoutes = () => {
     const [hasError, setErrors] = useState(false);
@@ -39,7 +39,7 @@ const BlogPostRoutes = () => {
                         // In the future I can use whatever as long as it's unique to each post
                         return(
                             <Route exact path={"/posts/"+id} render={
-                                ()=> <BlogPostPage md_text={md_text} />
+                                ()=> <BlogPostPage md_text={md_text} parallaxImage={backBgImage} />
                             } />
                         )
                     }

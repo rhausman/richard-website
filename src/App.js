@@ -104,7 +104,6 @@ function App() {
                       Blog Posts
                     </ScrollLink>
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/about">About Test</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href={resume}>Resume</NavDropdown.Item>
                 </NavDropdown>
@@ -249,10 +248,6 @@ function App() {
             </BlogPreviewBench>
           </>
         }/> {/*Route path*/}
-
-        <Route exact path="/about" 
-          render = {()=><BlogPostPage />}
-        />
         
         <BlogPostRoutes />
 

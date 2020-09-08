@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactMarkdown from "react-markdown" //for putting markdown in blogpost pages (not used in this file)
 
 //import custom components
+import AnimatedDiv from './../Components/AnimatedDiv'
 import RNavbar from './../Components/RNavbar'
 import IconLink from './../Components/IconLink'
 //Assets
@@ -45,7 +46,7 @@ function BlogPostPage(props) {
     return (
         <>
             <Parallax
-                blur={5}
+                blur={0}
                 bgImage={parallaxImage}
                 bgImageAlt="Parallax Image"
                 strength={600}
@@ -60,8 +61,6 @@ function BlogPostPage(props) {
                         <NavDropdown.Item href="/">Home</NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item href={resume}>Resume</NavDropdown.Item>
-
-                        <NavDropdown.Item href="about"><Link to="/about">About Test</Link></NavDropdown.Item>
                         
                         </NavDropdown>
                         {/*IconLinks: Youtube, Github, LinkedIn */}
@@ -70,17 +69,17 @@ function BlogPostPage(props) {
                         <IconLink link="https://www.linkedin.com/in/richard-hausman-824035154/" image={linkedinIcon} />
                     </Container>
                 </RNavbar>
-
+                <br />
                 {
-                        <div  >
+                        <AnimatedDiv animationName="fadeInUpBig" >
                             <header className="App-header" style={{color:"black"}}>
-                                <div style={{width:"75%"}}>
+                                <div style={{width:"70%"}}>
                                     <Jumbotron>
                                         <ReactMarkdown source={md_text} />
                                     </Jumbotron>
                                 </div>
                             </header>
-                        </div>
+                        </AnimatedDiv>
                     
                 }
 
