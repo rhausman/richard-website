@@ -13,7 +13,9 @@ const BlogPostRoutes = () => {
     const [blogPostPreviews, setBlogPostPreviews] = useState({});
   
     async function fetchData() {
-        const res = await fetch("http://localhost:8000/blogPostPreviews/");
+        console.log("FETCHING DATA")
+        const res = await fetch("https://richardhausman.pythonanywhere.com/blogPostPreviews/");
+        console.log(res)
         res
         .json()
         .then(res => setBlogPostPreviews(res))
@@ -21,7 +23,8 @@ const BlogPostRoutes = () => {
     }
   
     useEffect(() => {
-      fetchData();
+        console.log("GETTING")
+        fetchData();
     }, []);
 
     //make a list of blog Preview Cards, starting with the most recent post

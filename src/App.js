@@ -55,7 +55,7 @@ function scrollOnChange(threshold,percentage, mem){
 }
 
 function App() {
-
+  console.log("UPDATED VERSION")
   //const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
   //const myRef = useRef(null)
   //const executeScroll = () => scrollToRef(myRef)
@@ -106,6 +106,7 @@ function App() {
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href={resume}>Resume</NavDropdown.Item>
+                  <NavDropdown.Item href="/about">About</NavDropdown.Item>
                 </NavDropdown>
                 {/*IconLinks: Youtube, Github, LinkedIn */}
                 <IconLink link="https://www.youtube.com/channel/UCYpNpdtcXBxc_zYCAFadnOg" image={youtubeIcon} />
@@ -117,7 +118,7 @@ function App() {
             <HomePage renderNavbar="false" senseTitleOnScreen="false">
               <SequentialRenderContainer delay={100}>
                 <AnimatedParagraph animationName="fadeInLeft" key={0}>
-                  I am simply someone with a profound love of both science and humanity;{"\n"}
+                  I am simply someone with a profound love love love of both science and humanity;{"\n"}
                 </AnimatedParagraph>
                 <AnimatedParagraph animationName="fadeInRight" key={1}>
                   I want to use the technology at our disposal for the good of all people.
@@ -248,7 +249,7 @@ function App() {
             </BlogPreviewBench>
           </>
         }/> {/*Route path*/}
-        
+        <Route exact path="/about" component={About}/>
         <BlogPostRoutes />
 
         
