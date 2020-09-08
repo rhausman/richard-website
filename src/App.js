@@ -17,7 +17,6 @@ import AnimatedDiv from "./Components/AnimatedDiv"
 import SequentialDivRenderContainer from "./Components/SequentialDivRenderContainer"
 import RenderOnView from "./Components/RenderOnView"
 import BlogPreviewBench from "./Components/BlogPreviewBench"
-import About from "./Components/About"
 import BlogPostPage from "./Components/BlogPostPage"
 import BlogPostRoutes from "./Components/BlogPostRoutes"
 
