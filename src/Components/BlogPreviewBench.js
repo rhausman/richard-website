@@ -7,10 +7,12 @@ import logo from "./../Assets/logo.svg"
 import marked from "marked" //for putting markdown in blogpost pages (not used in this file)
 //custom components and assets
 import AnimatedDiv from "./AnimatedDiv"
+import BlogPostPage from "./BlogPostPage"
 
 const ncards=3
 
 function getPreviewCards(bPostPreviews, number=false){
+    //console.log(bPostPreviews[2].md_text)
     if(number){
         bPostPreviews = bPostPreviews.slice(-number)
     }
@@ -31,10 +33,10 @@ function getPreviewCards(bPostPreviews, number=false){
                             <Button variant="primary" href={"/posts/"+id}>Go somewhere</Button>
                         </Card.Body>
                     </Card>
-                )
-            }
-        )
-    )
+                )//return of mapping function
+            }//mapping function
+        )//map
+    )//return
 }
 
 const BlogPreviewBench = () => {
@@ -52,6 +54,7 @@ const BlogPreviewBench = () => {
     useEffect(() => {
       fetchData();
     }, []);
+
 
     //make a list of blog Preview Cards, starting with the most recent post
     // (the data comes in reverse chronological order of creation)

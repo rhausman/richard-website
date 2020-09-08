@@ -1,4 +1,4 @@
-import React from "react"; //,{ useEffect , useState }
+import React, {useEffect, useState} from "react"; //,{ useEffect , useState }
 import { Parallax } from "react-parallax"; //, Background
 import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom"; //, Link
 //import { render } from "@testing-library/react";
@@ -9,10 +9,10 @@ import "./../Styles/HomePage.css";
 
 import './../Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ReactMarkdown from "react-markdown" //for putting markdown in blogpost pages (not used in this file)
+
 //import custom components
 import RNavbar from './../Components/RNavbar'
-import AnimatedTitle from './../Components/AnimatedTitle'
-import ParallaxBar from './../Components/ParallaxBar'
 import IconLink from './../Components/IconLink'
 //Assets
 import logo from './../Assets/logo.svg';
@@ -25,45 +25,31 @@ import linkedinIcon from "./../Assets/linkedin_icon.png"
 //assets
 import defaultParallaxImage from "./../Assets/Alp.JPG"
 
-function HomePage(props) {
+
+const importAll = (r) => r.keys().map(r);
+
+function isEmptyObject(obj){//helper
+    return JSON.stringify(obj) === '{}';
+}
+
+function BlogPostPage(props) {
     const {
+        md_text="# This is Just a test",
         parallaxImage=defaultParallaxImage, 
-        renderNavbar=true, 
-        titleMessage="SCIENCE FOR HUMANITY", 
-        placeHoldHeight=false,
-        parallaxBarTop="40%",
-        parallaxBarLeft="50%",
-        senseTitleOnScreen="false", 
-        children} = props //render navbar? or it is separate
-    
-    //const [initialized, setInitialized] = useState(false);
-    //const [images, setImages] = useState([]);
-    //const [layers, setLayers] = useState([]);
+        children
+    } = props //render navbar? or it is separate
 
     // Conditionally render the navbar
-    let navbar = <></>
-    if(renderNavbar=="true"){
-        console.log("generating navbar")
-        navbar=(
-            <RNavbar className="RNavbarTop" expand="lg" title="Welcome to my Website">
-                Welcome to my Website
-            </RNavbar>
-            )
-    }else{console.log("NONAV")}
+    //console.log(!isEmptyObject(blogPost)?("THE POST"+ blogPost.substring(0,10) ):"NOTHIN")
 
     return (
         <>
-            {navbar}
             <Parallax
                 blur={5}
                 bgImage={parallaxImage}
                 bgImageAlt="Parallax Image"
                 strength={600}
-                renderLayer={percentage => (
-                    <div style={{position:"absolute", top:parallaxBarTop, left:parallaxBarLeft}}> 
-                        <ParallaxBar percentage={percentage} />
-                    </div>
-                )}
+                
             >
                 <RNavbar className="RNavbarTop" expand="lg" title="Richard Hausman" sticky="top">
                     <Container>
@@ -85,21 +71,22 @@ function HomePage(props) {
                     </Container>
                 </RNavbar>
 
-                <div style={placeHoldHeight?{height:placeHoldHeight}:{}} >
-            
-                    <header className="App-header">
-                        
-                        <div style={{position:"absolute",top:parallaxBarTop, left:parallaxBarLeft, transform:"translate(-50%,-100%)"}}>
-                            <AnimatedTitle message={titleMessage} senseOnScreen={senseTitleOnScreen} fontSize={50} />
-                        </div>              
-                        <br />
-                        <br />
-                        {children}
-                    </header>
-                </div>
+                {
+                        <div  >
+                            <header className="App-header" style={{color:"black"}}>
+                                <div style={{width:"75%"}}>
+                                    <Jumbotron>
+                                        <ReactMarkdown source={md_text} />
+                                    </Jumbotron>
+                                </div>
+                            </header>
+                        </div>
+                    
+                }
+
             </Parallax>
         </>
     );
   }
 
-export default HomePage
+export default BlogPostPage

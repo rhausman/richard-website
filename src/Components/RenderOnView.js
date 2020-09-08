@@ -6,32 +6,8 @@ import handleViewport from 'react-in-viewport';
 import {useSequentialRenderer} from "./useSequentialRenderer"
 import AnimatedDivSequential from "./AnimatedDivSequential";
 
-/* for the child component
-    const [loaded, setLoaded] = useState(false);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-        setLoaded(true);
-        const i = done();
-        console.log("happening multiple times", i, new Date());
-        }, delay);
 
-        return () => clearTimeout(timer);
-    }, [done]);
- */
-/*
-let Block = (props) => {
-    console.log(props)
-    let {inViewport, _props} = props
-    let {children} = _props
-    console.log(_props)
-    if(inViewport){
-        console.log("RENDERING")
-        return {children}
-    } else return <div style={{ width: '400px', height: '300px', background: '#ff9800' }} />
-
-}
-*/
 const Block = (props) => {
     const { inViewport, enterCount, forwardedRef, onlyOnce, _props} = props;
     let {children, placeHolderHeight, placeHolderWidth} = _props

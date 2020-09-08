@@ -1,6 +1,6 @@
 import React from 'react';
 //import {Button} from "react-bootstrap"
-import { Router, Route } from "react-router-dom"; //, Link
+import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom"; //, Link
 import { Link as ScrollLink} from "react-scroll"; //Element, animateScroll as scroll 
 import { ScrollPercentage } from 'react-scroll-percentage' //useScrollPercentage, 
 import { createBrowserHistory as createHistory } from "history";
@@ -17,6 +17,9 @@ import AnimatedDiv from "./Components/AnimatedDiv"
 import SequentialDivRenderContainer from "./Components/SequentialDivRenderContainer"
 import RenderOnView from "./Components/RenderOnView"
 import BlogPreviewBench from "./Components/BlogPreviewBench"
+import About from "./Components/About"
+import BlogPostPage from "./Components/BlogPostPage"
+import BlogPostRoutes from "./Components/BlogPostRoutes"
 
 //assets
 //import logo from './Assets/logo.svg';
@@ -69,185 +72,195 @@ function App() {
           onChange={(percentage, entry) => {percentageMem = scrollOnChange(autoscrollThreshold,percentage, percentageMem)}  }
         >
       */}
-      <Route path="/" render={
-        ()=> 
-        <>
-          <RNavbar className="RNavbarTop" expand="lg" title="Richard Hausman" sticky="top">
-            <Container>
-              <NavDropdown title="Sections" id="collasible-nav-dropdown" className="dropdown"
-                renderMenuOnMount={true}
-              >
-                <NavDropdown.Item >
-                  <ScrollLink
-                  activeClass="active"
-                  to="section2"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={500}
-                  >Experience</ScrollLink>
-                </NavDropdown.Item>
-                <NavDropdown.Item href={resume}>Resume</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  <ScrollLink
+      <Switch>
+        <Route exact path="/" render={
+          ()=> 
+          <>
+            <RNavbar className="RNavbarTop" expand="lg" title="Richard Hausman" sticky="top">
+              <Container>
+                <NavDropdown title="Sections" id="collasible-nav-dropdown" className="dropdown"
+                  renderMenuOnMount={true}
+                >
+                  <NavDropdown.Item >
+                    <ScrollLink
                     activeClass="active"
-                    to="section3"
+                    to="section2"
                     spy={true}
                     smooth={true}
                     offset={-100}
                     duration={500}
-                  >
-                    Blog Posts
-                  </ScrollLink>
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-              </NavDropdown>
-              {/*IconLinks: Youtube, Github, LinkedIn */}
-              <IconLink link="https://www.youtube.com/channel/UCYpNpdtcXBxc_zYCAFadnOg" image={youtubeIcon} />
-              <IconLink link="https://github.com/rhausman" image={githubIcon} />
-              <IconLink link="https://www.linkedin.com/in/richard-hausman-824035154/" image={linkedinIcon} />
-            </Container>
-          </RNavbar>
-
-          <HomePage renderNavbar="false" senseTitleOnScreen="false">
-            <SequentialRenderContainer delay={100}>
-              <AnimatedParagraph animationName="fadeInLeft" key={0}>
-                I am simply someone with a profound love of both science and humanity;{"\n"}
-              </AnimatedParagraph>
-              <AnimatedParagraph animationName="fadeInRight" key={1}>
-                I want to use the technology at our disposal for the good of all people.
-              </AnimatedParagraph>
-              <AnimatedParagraph animationName="fadeInUp" key={2}>
-                  "Music can name the unnamable and communicate the unknowable"<br />
-                  -Leonard bernstein"
-              </AnimatedParagraph>
-            </SequentialRenderContainer>
-          </HomePage>
-      
-    
-    
-          <Section
-          title="Experience"
-          id="section2"
-          />
-          <HomePage 
-            renderNavbar="false" parallaxImage={secondBgImage} titleMessage="EXPERIENCE" senseTitleOnScreen="true"
-            parallaxBarTop="5%" 
-            placeHoldHeight={2200}
-          >
-            <div style={{paddingTop:"60px"}}>
-              <RenderOnView placeHolderHeight={1981} placeHolderWidth={980}  >
-                <Container id="Experience Jumbotrons" >
-                  <SequentialDivRenderContainer delay={100} senseOnScreen={true}>
+                    >Experience</ScrollLink>
+                  </NavDropdown.Item>
                   
-                    <AnimatedDiv animationName="fadeInLeft" senseOnScreen={false} time={1.0} >
-                      <Jumbotron style={{background:"rgba(62, 224, 191, 0.8)"}} >
-                        <Row className="justify-content-md-center">
-                          <h1 style={{color:"black"}}>Steller lab - Rockefeller SSRP</h1>
-                        </Row>
-                        <Row>
-                          <Col><img src={rockefeller_img} className="experience-image" /></Col>
-                          <Col>
-                            <p style={{color:"black"}} >
-                              I studied protein degredadion pathways 
-                              at the Steller lab at Rockefeller University. In <i>Drosophila Melanogaster</i>,
-                              using a combination of <i>in vivo</i> and <i>in vitro</i> techniques including immunohistochemical microscopy,
-                              protein expression in <i>E. Coli</i> and S2 cells, Western Blots, breeding lines of flies, 
-                              and quantitative analysis in the context of a controlled experiment.
-                              <br /> 
-                              <Button variant="success" 
-                                href="https://drive.google.com/file/d/0B6oDE6tEAYrUNGhjaHVnQVlveFU/view?usp=sharing">
-                                Here's a poster that summarizes my project.
-                              </Button>
-                              
-                            </p>
-                          </Col>
-                        </Row>
-                        
-                      </Jumbotron>
-                    </AnimatedDiv>
-                    <AnimatedDiv animationName="fadeInRight" senseOnScreen={false} time={1.0} >
-                      <Jumbotron style={{background:"rgba(62, 224, 191, 0.8)"}}>
-                        <Row className="justify-content-md-center">
-                          <h1 style={{color:"black"}}>Rolemage lab - Simons SSRP</h1>
-                        </Row>
-                        <Row>
-                          <Col>
-                            <p style={{color:"black"}} >
-                              I studied the formation of fear memories in mouse 
-                              at the "Rolemage" lab at Stony Brook University as part of the Simons Foundation's Science 
-                              Research Program<br /> 
-                              <br />
-                              <Button variant="primary" 
-                                href="https://www.pharm.stonybrook.edu/faculty/t/talmage">
-                                Learn more about the work of Dr. Role and Dr. Talmage.
-                              </Button>
-                              <br /> <br />
-                              <Button variant="success" 
-                                href="https://www.linkedin.com/in/richard-hausman-824035154/">
-                                Learn more about the specific project that I completed.
-                              </Button>
-                              
-                              <br />
-                              <br />
-                              The world of memory formation, storage, and recall is absolutely fascinating.
-                            </p>
-                          </Col>
-                          <Col><img src={stonybrook_img} className="experience-image" /></Col>
-                        </Row>
-                        
-                      </Jumbotron>
-                    </AnimatedDiv>
-                    <AnimatedDiv animationName="fadeInDownBig" senseOnScreen={false} time={3.0} >
-                      <Jumbotron style={{background:"rgba(62, 224, 191, 0.8)"}}>
-                        <Row className="justify-content-md-center">
-                          <h1 style={{color:"black"}}>The Not Company</h1>
-                        </Row>
-                        <Row className="justify-content-md-center">
-                          
-                            <p style={{color:"black"}} >
-                              I worked with a team to replace meat and dairy-<b>deliciously</b>-using Machine Learning
-                              at <b>The Not Company.</b> Data curation, feature engineering, training and deploying models (on Kubeflow),
-                              working interdepartmentally to iterate on the models, and more. <br/>
-                            </p>
-                        </Row>
-                        <Row className="justify-content-md-center">
-                          <Button variant="success" 
-                                href="https://www.notco.com">
-                                Click Here to learn More
-                              </Button>
-                        </Row>
-                        <br />
-                        <Row className="justify-content-md-center">
-                          
-                          
-                            <img src={notco_img} className="experience-image" />
-                        </Row>
-                        
-                      </Jumbotron>
-                      
-                    </AnimatedDiv>
-                  </SequentialDivRenderContainer>
-                </Container>
-              </RenderOnView>
-            </div>
-          </HomePage>
+                  <NavDropdown.Item href="#action/3.3">
+                    <ScrollLink
+                      activeClass="active"
+                      to="section3"
+                      spy={true}
+                      smooth={true}
+                      offset={-100}
+                      duration={500}
+                    >
+                      Blog Posts
+                    </ScrollLink>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/about">About Test</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href={resume}>Resume</NavDropdown.Item>
+                </NavDropdown>
+                {/*IconLinks: Youtube, Github, LinkedIn */}
+                <IconLink link="https://www.youtube.com/channel/UCYpNpdtcXBxc_zYCAFadnOg" image={youtubeIcon} />
+                <IconLink link="https://github.com/rhausman" image={githubIcon} />
+                <IconLink link="https://www.linkedin.com/in/richard-hausman-824035154/" image={linkedinIcon} />
+              </Container>
+            </RNavbar>
 
-          <Section
-            title="Latest Posts"
-            id="section3"
-          />
-
-          <BlogPreviewBench path="./">
-
-          </BlogPreviewBench>
-        </>
-      }/> {/*Route path*/}
+            <HomePage renderNavbar="false" senseTitleOnScreen="false">
+              <SequentialRenderContainer delay={100}>
+                <AnimatedParagraph animationName="fadeInLeft" key={0}>
+                  I am simply someone with a profound love of both science and humanity;{"\n"}
+                </AnimatedParagraph>
+                <AnimatedParagraph animationName="fadeInRight" key={1}>
+                  I want to use the technology at our disposal for the good of all people.
+                </AnimatedParagraph>
+                <AnimatedParagraph animationName="fadeInUp" key={2}>
+                    "Music can name the unnamable and communicate the unknowable"<br />
+                    -Leonard bernstein"
+                </AnimatedParagraph>
+              </SequentialRenderContainer>
+            </HomePage>
+        
       
-      {/*
-      </ScrollPercentage>
-      */}
+      
+            <Section
+            title="Experience"
+            id="section2"
+            />
+            <HomePage 
+              renderNavbar="false" parallaxImage={secondBgImage} titleMessage="EXPERIENCE" senseTitleOnScreen="true"
+              parallaxBarTop="5%" 
+              placeHoldHeight={2200}
+            >
+              <div style={{paddingTop:"60px"}}>
+                <RenderOnView placeHolderHeight={1981} placeHolderWidth={980}  >
+                  <Container id="Experience Jumbotrons" >
+                    <SequentialDivRenderContainer delay={100} senseOnScreen={true}>
+                    
+                      <AnimatedDiv animationName="fadeInLeft" senseOnScreen={false} time={1.0} >
+                        <Jumbotron style={{background:"rgba(62, 224, 191, 0.8)"}} >
+                          <Row className="justify-content-md-center">
+                            <h1 style={{color:"black"}}>Steller lab - Rockefeller SSRP</h1>
+                          </Row>
+                          <Row>
+                            <Col><img src={rockefeller_img} className="experience-image" /></Col>
+                            <Col>
+                              <p style={{color:"black"}} >
+                                I studied protein degredadion pathways 
+                                at the Steller lab at Rockefeller University. In <i>Drosophila Melanogaster</i>,
+                                using a combination of <i>in vivo</i> and <i>in vitro</i> techniques including immunohistochemical microscopy,
+                                protein expression in <i>E. Coli</i> and S2 cells, Western Blots, breeding lines of flies, 
+                                and quantitative analysis in the context of a controlled experiment.
+                                <br /> 
+                                <Button variant="success" 
+                                  href="https://drive.google.com/file/d/0B6oDE6tEAYrUNGhjaHVnQVlveFU/view?usp=sharing">
+                                  Here's a poster that summarizes my project.
+                                </Button>
+                                
+                              </p>
+                            </Col>
+                          </Row>
+                          
+                        </Jumbotron>
+                      </AnimatedDiv>
+                      <AnimatedDiv animationName="fadeInRight" senseOnScreen={false} time={1.0} >
+                        <Jumbotron style={{background:"rgba(62, 224, 191, 0.8)"}}>
+                          <Row className="justify-content-md-center">
+                            <h1 style={{color:"black"}}>Rolemage lab - Simons SSRP</h1>
+                          </Row>
+                          <Row>
+                            <Col>
+                              <p style={{color:"black"}} >
+                                I studied the formation of fear memories in mouse 
+                                at the "Rolemage" lab at Stony Brook University as part of the Simons Foundation's Science 
+                                Research Program<br /> 
+                                <br />
+                                <Button variant="primary" 
+                                  href="https://www.pharm.stonybrook.edu/faculty/t/talmage">
+                                  Learn more about the work of Dr. Role and Dr. Talmage.
+                                </Button>
+                                <br /> <br />
+                                <Button variant="success" 
+                                  href="https://www.linkedin.com/in/richard-hausman-824035154/">
+                                  Learn more about the specific project that I completed.
+                                </Button>
+                                
+                                <br />
+                                <br />
+                                The world of memory formation, storage, and recall is absolutely fascinating.
+                              </p>
+                            </Col>
+                            <Col><img src={stonybrook_img} className="experience-image" /></Col>
+                          </Row>
+                          
+                        </Jumbotron>
+                      </AnimatedDiv>
+                      <AnimatedDiv animationName="fadeInDownBig" senseOnScreen={false} time={3.0} >
+                        <Jumbotron style={{background:"rgba(62, 224, 191, 0.8)"}}>
+                          <Row className="justify-content-md-center">
+                            <h1 style={{color:"black"}}>The Not Company</h1>
+                          </Row>
+                          <Row className="justify-content-md-center">
+                            
+                              <p style={{color:"black"}} >
+                                I worked with a team to replace meat and dairy-<b>deliciously</b>-using Machine Learning
+                                at <b>The Not Company.</b> Data curation, feature engineering, training and deploying models (on Kubeflow),
+                                working interdepartmentally to iterate on the models, and more. <br/>
+                              </p>
+                          </Row>
+                          <Row className="justify-content-md-center">
+                            <Button variant="success" 
+                                  href="https://www.notco.com">
+                                  Click Here to learn More
+                                </Button>
+                          </Row>
+                          <br />
+                          <Row className="justify-content-md-center">
+                            
+                            
+                              <img src={notco_img} className="experience-image" />
+                          </Row>
+                          
+                        </Jumbotron>
+                        
+                      </AnimatedDiv>
+                    </SequentialDivRenderContainer>
+                  </Container>
+                </RenderOnView>
+              </div>
+            </HomePage>
+
+            <Section
+              title="Latest Posts"
+              id="section3"
+            />
+
+            <BlogPreviewBench path="./" >
+
+            </BlogPreviewBench>
+          </>
+        }/> {/*Route path*/}
+
+        <Route exact path="/about" 
+          render = {()=><BlogPostPage />}
+        />
+        
+        <BlogPostRoutes />
+
+        
+        {/*
+        </ScrollPercentage>
+        */}
+      </Switch>
     </Router>
   );
 }
