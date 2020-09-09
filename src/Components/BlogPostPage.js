@@ -9,7 +9,6 @@ import "./../Styles/HomePage.css";
 
 import './../Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ReactMarkdown from "react-markdown" //for putting markdown in blogpost pages (not used in this file)
 
 //import custom components
 import AnimatedDiv from './../Components/AnimatedDiv'
@@ -25,6 +24,8 @@ import linkedinIcon from "./../Assets/linkedin_icon.png"
 
 //assets
 import defaultParallaxImage from "./../Assets/taj_0.jpg"
+
+const ReactMarkdown = require('react-markdown/with-html')
 
 function BlogPostPage(props) {
     const {
@@ -67,7 +68,7 @@ function BlogPostPage(props) {
                             <header className="App-header" style={{color:"black"}}>
                                 <div style={{width:"70%"}}>
                                     <Jumbotron>
-                                        <ReactMarkdown source={md_text} />
+                                        <ReactMarkdown source={md_text} escapeHtml={false} />
                                     </Jumbotron>
                                 </div>
                             </header>
