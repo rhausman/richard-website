@@ -32,7 +32,7 @@ function RNavbar(props){
                     <Nav className="mr-auto" >
                     
                             <div className="RNavbarText">
-                                <p className="text-center mt-4 mb-4">
+                                <p className="text-center mt-4 mb-4" style={{fontSize:38}}>
                                 {title}
                                 </p>
                             </div>
