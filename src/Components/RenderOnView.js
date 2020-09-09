@@ -7,7 +7,7 @@ import handleViewport from 'react-in-viewport';
 
 const Block = (props) => {
     const { inViewport, enterCount, forwardedRef, onlyOnce, _props} = props;
-    let {children, placeHolderHeight, placeHolderWidth} = _props
+    let {children} = _props
     console.log(enterCount)
     //if it's in the viewport AND
     const toRender = inViewport&&(!onlyOnce||enterCount<2) ? children : <div />; //placeholder

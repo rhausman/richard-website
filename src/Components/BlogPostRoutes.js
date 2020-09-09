@@ -36,7 +36,7 @@ const BlogPostRoutes = () => {
             Array.isArray(blogPostPreviews)?(
                 blogPostPreviews.map(
                     function (item, i){
-                        const {id, title, md_file_path, preview_img_path, description, md_text} = item
+                        const {id, md_text} = item
                         // Right Now, I'll use the id as the unique identifier to dynamically link to the post
                         // In the future I can use whatever as long as it's unique to each post
                         return(

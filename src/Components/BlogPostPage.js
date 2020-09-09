@@ -26,18 +26,10 @@ import linkedinIcon from "./../Assets/linkedin_icon.png"
 //assets
 import defaultParallaxImage from "./../Assets/taj_0.jpg"
 
-
-const importAll = (r) => r.keys().map(r);
-
-function isEmptyObject(obj){//helper
-    return JSON.stringify(obj) === '{}';
-}
-
 function BlogPostPage(props) {
     const {
         md_text="# This is Just a test",
         parallaxImage=defaultParallaxImage, 
-        children
     } = props //render navbar? or it is separate
 
     // Conditionally render the navbar

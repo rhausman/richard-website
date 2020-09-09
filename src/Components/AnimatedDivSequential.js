@@ -7,10 +7,6 @@ import AnimationsObject from "./AnimationsObject"
 
 const animationsDict = AnimationsObject()
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
 function AnimatedDivSequential({children, animationName="fadeInDownBig", time="1", delay=1000, senseOnScreen=false, done}){
   
     const styles = {
@@ -26,7 +22,7 @@ function AnimatedDivSequential({children, animationName="fadeInDownBig", time="1
         //console.log("DELAYING")
         const timer = setTimeout(() => {
         setLoaded(true);
-        const i= stableDone();
+        stableDone();
         }, delay);
     
 

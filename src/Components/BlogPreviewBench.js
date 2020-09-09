@@ -19,7 +19,7 @@ function getPreviewCards(bPostPreviews, number=false){
     return(
         bPostPreviews.map(
             function (item, i){
-                const {id, title, md_file_path, preview_img_path, description} = item
+                const {id, title, preview_img_path, description} = item
                 // Right Now, I'll use the id as the unique identifier to dynamically link to the post
                 // In the future I can use whatever as long as it's unique to each post
                 return(

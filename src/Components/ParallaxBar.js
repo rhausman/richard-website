@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 
 function ParallaxBar({percentage, topPercent}){
-    const [base_percent, setBasePercent] = useState(0)
+    //const [base_percent, setBasePercent] = useState(0)
 
     //console.log("PERCENT: ",toLog,": ", percentage-(parseInt(topPercent)/100) )
     //console.log("WIDTH: "+(percentage- ((parseInt(topPercent)/100 ))+0.01 ) * 3000)

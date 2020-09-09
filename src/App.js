@@ -3,7 +3,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom"; //, Link
 import { Link as ScrollLink} from "react-scroll"; //Element, animateScroll as scroll 
 //import { ScrollPercentage } from 'react-scroll-percentage' //useScrollPercentage, 
-import { createBrowserHistory as createHistory } from "history";
 import { NavDropdown, Container, Row, Col, Jumbotron, Button} from "react-bootstrap"
 
 //import custom components
@@ -17,7 +16,6 @@ import AnimatedDiv from "./Components/AnimatedDiv"
 import SequentialDivRenderContainer from "./Components/SequentialDivRenderContainer"
 import RenderOnView from "./Components/RenderOnView"
 import BlogPreviewBench from "./Components/BlogPreviewBench"
-import BlogPostPage from "./Components/BlogPostPage"
 import BlogPostRoutes from "./Components/BlogPostRoutes"
 
 //assets
@@ -34,24 +32,7 @@ import rockefeller_img from "./Assets/Steller_Lab/IMG_0185.jpg"
 import stonybrook_img from "./Assets/Rolemage/IMG_6733.jpg"
 import notco_img from "./Assets/NotCo/thenotcompany.png"
 
-//global constant definition
-
-//setup
-const history = createHistory();
-
 //const homepage = <HomePage parallaxImage={parallaxImage} />
-const autoscrollThreshold = 0.5
-function scrollOnChange(threshold,percentage, mem){
-  if(percentage>threshold && mem<threshold)
-  {
-    mem = percentage
-    window.scrollTo({top:2000, behavior:"smooth"})
-  } else if(percentage<threshold && mem>threshold){
-    mem=percentage
-  }
-
-  return mem
-}
 
 function App() {
   console.log("UPDATED VERSION")
@@ -60,10 +41,9 @@ function App() {
   //const executeScroll = () => scrollToRef(myRef)
   
   //const [ref, percentage] = useScrollPercentage()
-  let percentageMem = 0.0
 
   return (
-    <Router history={history}>
+    <Router>
       
       {/*
         <ScrollPercentage
@@ -151,7 +131,7 @@ function App() {
                             <h1 style={{color:"black"}}>Steller lab - Rockefeller SSRP</h1>
                           </Row>
                           <Row>
-                            <Col><img src={rockefeller_img} className="experience-image" /></Col>
+                            <Col><img src={rockefeller_img} className="experience-image" alt="Rockefeller" /></Col>
                             <Col>
                               <p style={{color:"black"}} >
                                 I studied protein degredadion pathways 
@@ -198,7 +178,7 @@ function App() {
                                 The world of memory formation, storage, and recall is absolutely fascinating.
                               </p>
                             </Col>
-                            <Col><img src={stonybrook_img} className="experience-image" /></Col>
+                            <Col><img src={stonybrook_img} className="experience-image" alt="Stonybrook" /></Col>
                           </Row>
                           
                         </Jumbotron>
@@ -226,7 +206,7 @@ function App() {
                           <Row className="justify-content-md-center">
                             
                             
-                              <img src={notco_img} className="experience-image" />
+                              <img src={notco_img} className="experience-image" alt="NotCo" />
                           </Row>
                           
                         </Jumbotron>

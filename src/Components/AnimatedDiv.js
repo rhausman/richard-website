@@ -7,10 +7,6 @@ import AnimationsObject from "./AnimationsObject"
 
 const animationsDict = AnimationsObject()
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
 function AnimatedDiv({children, animationName="fadeInDownBig", time="1", delay=1000, senseOnScreen=false, done}){
   
   
@@ -27,18 +23,6 @@ function AnimatedDiv({children, animationName="fadeInDownBig", time="1", delay=1
     
     // Only for use with useSequentialRenderer hook callback
 
-    /*
-    useEffect(() => {
-        //console.log("DELAYING")
-        const timer = setTimeout(() => {
-        setLoaded(true);
-        const i= stableDone();
-        }, delay);
-    
-
-      return () => clearTimeout(timer);
-  }, [stableDone]);
-  */
   // ------------------
   //console.log("CHILDREN: "+children)
     const [ref, inView] = useInView({
