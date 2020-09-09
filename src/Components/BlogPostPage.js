@@ -6,6 +6,7 @@ import { Parallax } from "react-parallax"; //, Background
 //import { Navbar, Nav} from "react-bootstrap"
 import { NavDropdown, Container, Jumbotron} from "react-bootstrap" //Row, Col, Button
 import "./../Styles/HomePage.css";
+import "./../Styles/BlogPost.css";
 
 import './../Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
