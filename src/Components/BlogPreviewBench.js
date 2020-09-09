@@ -30,7 +30,7 @@ function getPreviewCards(bPostPreviews, number=false){
                             <Card.Text>
                                 {description}
                             </Card.Text>
-                            <Button variant="primary" href={"/posts/"+id}>Go somewhere</Button>
+                            <Button variant="primary" href={"/posts/"+id}>Read More</Button>
                         </Card.Body>
                     </Card>
                 )//return of mapping function
