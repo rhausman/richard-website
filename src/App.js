@@ -1,8 +1,8 @@
 import React from 'react';
 //import {Button} from "react-bootstrap"
-import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom"; //, Link
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom"; //, Link
 import { Link as ScrollLink} from "react-scroll"; //Element, animateScroll as scroll 
-import { ScrollPercentage } from 'react-scroll-percentage' //useScrollPercentage, 
+//import { ScrollPercentage } from 'react-scroll-percentage' //useScrollPercentage, 
 import { createBrowserHistory as createHistory } from "history";
 import { NavDropdown, Container, Row, Col, Jumbotron, Button} from "react-bootstrap"
 

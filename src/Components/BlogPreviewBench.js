@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from "react"
-import {Card, CardDeck, Button, Jumbotron, Container, Row} from "react-bootstrap"
-import { BrowserRouter as Router, Route, Switch, Link, useParams} from "react-router-dom"
+import {Card, CardDeck, Button, Jumbotron, Row} from "react-bootstrap"
+//import { BrowserRouter as Router, Route, Switch, Link, useParams} from "react-router-dom"
 
-import logo from "./../Assets/logo.svg"
+//import logo from "./../Assets/logo.svg"
 
-import marked from "marked" //for putting markdown in blogpost pages (not used in this file)
+//import marked from "marked" //for putting markdown in blogpost pages (not used in this file)
 //custom components and assets
 import AnimatedDiv from "./AnimatedDiv"
-import BlogPostPage from "./BlogPostPage"
+//import BlogPostPage from "./BlogPostPage"
 
 const ncards=3
 

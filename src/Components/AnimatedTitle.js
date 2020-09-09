@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React from "react" //, { useRef }
 import {fadeInDownBig, fadeInUpBig} from "react-animations"
 import Radium, {StyleRoot} from 'radium';
 import { useInView } from 'react-intersection-observer'

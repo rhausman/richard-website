@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useCallback} from "react"
-import Radium, {StyleRoot} from 'radium';
-import { useInView } from 'react-intersection-observer'
+import Radium from 'radium'; //, {StyleRoot}
+//import { useInView } from 'react-intersection-observer'
 import AnimationsObject from "./AnimationsObject"
 
 //my Components

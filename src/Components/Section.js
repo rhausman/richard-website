@@ -2,7 +2,7 @@ import React from "react";
 //import { Navbar, Container} from "react-bootstrap" //Nav,
 
 //import custom modules
-import RNavbar from "./RNavbar"
+//import RNavbar from "./RNavbar"
 
 function Section({ title, id, children}) {
   return (

@@ -1,6 +1,6 @@
-import  React, { useEffect, useState, assert } from "react";
-import ReactDOM from "react-dom";
-import { useInView } from 'react-intersection-observer'
+import  React from "react";
+//import ReactDOM from "react-dom";
+//import { useInView } from 'react-intersection-observer'
 import {useSequentialRenderer} from "./useSequentialRenderer"
 import AnimatedParagraphSequential from "./AnimatedParagraphSequential";
 

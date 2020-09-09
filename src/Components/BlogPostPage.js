@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from "react"; //,{ useEffect , useState }
+import React from "react"; //,{ useEffect , useState }
 import { Parallax } from "react-parallax"; //, Background
-import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom"; //, Link
+//import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom"; //, Link
 //import { render } from "@testing-library/react";
 //import {Button} from "react-bootstrap"
 //import { Navbar, Nav} from "react-bootstrap"
-import { NavDropdown, Container, Row, Col, Jumbotron, Button} from "react-bootstrap"
+import { NavDropdown, Container, Jumbotron} from "react-bootstrap" //Row, Col, Button
 import "./../Styles/HomePage.css";
 
 import './../Styles/App.css';
@@ -16,7 +16,7 @@ import AnimatedDiv from './../Components/AnimatedDiv'
 import RNavbar from './../Components/RNavbar'
 import IconLink from './../Components/IconLink'
 //Assets
-import logo from './../Assets/logo.svg';
+//import logo from './../Assets/logo.svg';
 import resume from "./../Assets/RESUME.pdf"
 import githubIcon from "./../Assets/github_icon.png"
 import youtubeIcon from "./../Assets/youtube_icon.png"

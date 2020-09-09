@@ -6,9 +6,6 @@ import AnimationsObject from "./AnimationsObject"
 
 const animationsDict = AnimationsObject()
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
 
 function AnimatedParagraph({children, animationName="fadeInDownBig", time="1", senseOnScreen="false"}){
 

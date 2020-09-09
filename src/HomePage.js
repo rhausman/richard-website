@@ -4,7 +4,7 @@ import { Parallax } from "react-parallax"; //, Background
 //import {Button} from "react-bootstrap"
 //import { Navbar, Nav} from "react-bootstrap"
 import "./Styles/HomePage.css";
-import logo from './Assets/logo.svg';
+//import logo from './Assets/logo.svg';
 import './Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import custom components

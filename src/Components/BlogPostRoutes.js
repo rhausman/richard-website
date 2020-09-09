@@ -1,9 +1,9 @@
 
 import React, {useState, useEffect} from "react"
-import {Card, CardDeck, Button, Jumbotron, Container, Row} from "react-bootstrap"
-import { BrowserRouter as Router, Route, Switch, Link, useParams} from "react-router-dom"
+//import {Card, CardDeck, Button, Jumbotron, Container, Row} from "react-bootstrap"
+import { Route} from "react-router-dom"
 
-import logo from "./../Assets/logo.svg"
+//import logo from "./../Assets/logo.svg"
 
 //custom components and assets
 import BlogPostPage from "./BlogPostPage"

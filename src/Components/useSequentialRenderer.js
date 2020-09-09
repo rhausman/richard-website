@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect, assert } from "react";
+import React, { useReducer } from "react";
 
 const loadedProperty = "__loaded";
 
