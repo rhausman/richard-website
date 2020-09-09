@@ -116,10 +116,11 @@ function App() {
             <HomePage renderNavbar="false" senseTitleOnScreen="false">
               <SequentialRenderContainer delay={100}>
                 <AnimatedParagraph animationName="fadeInLeft" key={0}>
-                  I am simply someone with a profound love love love of both science and humanity;{"\n"}
+                  Please get in touch at hausman.richard@gmail.com; I would love to meet you!{"\n"}
                 </AnimatedParagraph>
                 <AnimatedParagraph animationName="fadeInRight" key={1}>
-                  I want to use the technology at our disposal for the good of all people.
+                  I want to use the technology at our disposal for the good of all people
+                   and to accelerate science.
                 </AnimatedParagraph>
                 <AnimatedParagraph animationName="fadeInUp" key={2}>
                     "Music can name the unnamable and communicate the unknowable"<br />
@@ -136,7 +137,7 @@ function App() {
             />
             <HomePage 
               renderNavbar="false" parallaxImage={secondBgImage} titleMessage="EXPERIENCE" senseTitleOnScreen="true"
-              parallaxBarTop="5%" 
+              parallaxBarTop="5%" parallaxBarHelpNumber={35}
               placeHoldHeight={2200}
             >
               <div style={{paddingTop:"60px"}}>
