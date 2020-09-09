@@ -23,6 +23,7 @@ function HomePage(props) {
         placeHoldHeight=false,
         parallaxBarTop="40%",
         parallaxBarLeft="50%",
+        parallaxBarHelpNumber=40,
         senseTitleOnScreen="false", 
         children} = props //render navbar? or it is separate
     
@@ -51,7 +52,7 @@ function HomePage(props) {
                 strength={600}
                 renderLayer={percentage => (
                     <div style={{position:"absolute", top:parallaxBarTop, left:parallaxBarLeft}}> 
-                        <ParallaxBar percentage={percentage} />
+                        <ParallaxBar percentage={percentage} topPercent={parallaxBarHelpNumber}  />
                     </div>
                 )}
             >
