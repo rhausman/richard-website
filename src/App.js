@@ -35,7 +35,7 @@ import notco_img from "./Assets/NotCo/thenotcompany.png"
 //const homepage = <HomePage parallaxImage={parallaxImage} />
 
 function App() {
-  console.log("UPDATED VERSION")
+  //console.log("UPDATED VERSION")
   //const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
   //const myRef = useRef(null)
   //const executeScroll = () => scrollToRef(myRef)
@@ -71,7 +71,7 @@ function App() {
                     >Experience</ScrollLink>
                   </NavDropdown.Item>
                   
-                  <NavDropdown.Item href="#action/3.3">
+                  <NavDropdown.Item>
                     <ScrollLink
                       activeClass="active"
                       to="section3"
@@ -135,7 +135,7 @@ function App() {
                             <Col>
                               <p style={{color:"black"}} >
                                 I studied protein degredadion pathways 
-                                at the Steller lab at Rockefeller University. In <i>Drosophila Melanogaster</i>,
+                                at the Steller lab at Rockefeller University in <i>Drosophila Melanogaster</i>,
                                 using a combination of <i>in vivo</i> and <i>in vitro</i> techniques including immunohistochemical microscopy,
                                 protein expression in <i>E. Coli</i> and S2 cells, Western Blots, breeding lines of flies, 
                                 and quantitative analysis in the context of a controlled experiment.
