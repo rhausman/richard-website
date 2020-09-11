@@ -71,3 +71,7 @@
 .jumbo-translucent{
   background:"rgba(62, 224, 191, 0.8)"
 }
+
+.shadow-text{
+  text-shadow: rgb(21, 0, 255) 2px 0 10px;
+}

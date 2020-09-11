@@ -8,7 +8,7 @@ import handleViewport from 'react-in-viewport';
 const Block = (props) => {
     const { inViewport, enterCount, forwardedRef, onlyOnce, _props} = props;
     let {children} = _props
-    console.log(enterCount)
+    //console.log(enterCount)
     //if it's in the viewport AND
     const toRender = inViewport&&(!onlyOnce||enterCount<2) ? children : <div />; //placeholder
     return (
@@ -32,9 +32,11 @@ function RenderOnView(props){
    //example below
    return (
     <div>
-    <ViewportBlock _props={props} onlyOnce={onlyOnce} onEnterViewport={() => console.log('enter')} onLeaveViewport={() => console.log('leave')} />
+    <ViewportBlock _props={props} onlyOnce={onlyOnce} /> 
     </div>
+    
    )
+   // onEnterViewport={() => console.log('enter')} onLeaveViewport={() => console.log('leave')} />
 
 }
 

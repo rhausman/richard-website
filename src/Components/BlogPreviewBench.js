@@ -44,9 +44,9 @@ const BlogPreviewBench = () => {
     const [blogPostPreviews, setBlogPostPreviews] = useState({});
   
     async function fetchData() {
-        console.log("GETTING NOW")
+        //console.log("GETTING NOW")
         const res = await fetch("https://richardhausman.pythonanywhere.com/blogPostPreviews/");
-        console.log(res)
+        //console.log(res)
         res
         .json()
         .then(res => setBlogPostPreviews(res))
@@ -54,7 +54,7 @@ const BlogPreviewBench = () => {
     }
   
     useEffect(() => {
-        console.log("TRYING TO GET!")
+        //console.log("TRYING TO GET!")
       fetchData();
     }, []);
 
