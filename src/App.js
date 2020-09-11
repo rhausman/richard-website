@@ -104,7 +104,7 @@ function App() {
                 </AnimatedParagraph>
                 <AnimatedParagraph animationName="fadeInUp" key={2}>
                     "Music can name the unnamable and communicate the unknowable"<br />
-                    -Leonard bernstein"
+                    -Leonard Bernstein"
                 </AnimatedParagraph>
               </SequentialRenderContainer>
             </HomePage>
