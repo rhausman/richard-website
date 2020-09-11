@@ -34,7 +34,7 @@ function HomePage(props) {
     // Conditionally render the navbar
     let navbar = <></>
     if(renderNavbar=="true"){
-        console.log("generating navbar")
+        //console.log("generating navbar")
         navbar=(
             <RNavbar className="RNavbarTop" expand="lg" title="Welcome to my Website">
                 Welcome to my Website

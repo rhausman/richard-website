@@ -10,7 +10,16 @@ const Block = (props) => {
     let {children} = _props
     //console.log(enterCount)
     //if it's in the viewport AND
-    const toRender = inViewport&&(!onlyOnce||enterCount<2) ? children : <div />; //placeholder
+    let renderChildren = false
+    if(inViewport) {renderChildren=true} //if it's visible, we should render
+    else if(enterCount>0){
+      renderChildren= onlyOnce 
+      //if not visible, and has been seen before, and only want to render once,
+      //then sustain the render
+    }
+    // if not visible and hasn't been seen before or we want to redo the animations, don't render
+
+    const toRender = renderChildren ? children : <div />; //placeholder
     return (
       <div className="viewport-block" ref={forwardedRef}>
         { toRender }
@@ -22,6 +31,7 @@ const ViewportBlock = handleViewport(Block, /** options: {}, config: {} **/);
 
 function RenderOnView(props){
     const {onlyOnce=false} = props
+
     //console.log("T1 "+Array.isArray(children))
 
 

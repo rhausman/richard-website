@@ -13,9 +13,9 @@ const BlogPostRoutes = () => {
     const [blogPostPreviews, setBlogPostPreviews] = useState({});
   
     async function fetchData() {
-        console.log("FETCHING DATA")
+        //console.log("FETCHING DATA")
         const res = await fetch("https://richardhausman.pythonanywhere.com/blogPostPreviews/");
-        console.log(res)
+        //console.log(res)
         res
         .json()
         .then(res => setBlogPostPreviews(res))
@@ -23,7 +23,7 @@ const BlogPostRoutes = () => {
     }
   
     useEffect(() => {
-        console.log("GETTING")
+        //console.log("GETTING")
         fetchData();
     }, []);
 

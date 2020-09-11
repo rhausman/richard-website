@@ -121,7 +121,7 @@ function App() {
               placeHoldHeight={2200}
             >
               <div style={{paddingTop:"60px"}}>
-                <RenderOnView placeHolderHeight={1981} placeHolderWidth={980}  >
+                <RenderOnView placeHolderHeight={1981} placeHolderWidth={980} onlyOnce={true} >
                   <Container id="Experience Jumbotrons" >
                     <SequentialDivRenderContainer delay={100} senseOnScreen={true}>
                     
