@@ -219,7 +219,7 @@ function App() {
             </HomePage>
 
             <Section
-              title="Latest Posts"
+              title="Recent Posts!"
               id="section3"
             />
 
