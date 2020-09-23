@@ -11,10 +11,22 @@ import AnimatedDiv from "./AnimatedDiv"
 
 const ncards=3
 
+//shuffle the array then slice the first n to get a random set of blog posts
+function getRandomSubarray(arr, size) {
+    var shuffled = arr.slice(0), i = arr.length, temp, index;
+    while (i--) {
+        index = Math.floor((i + 1) * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
+    }
+    return shuffled.slice(0, size);
+}
+
 function getPreviewCards(bPostPreviews, number=false){
     //console.log(bPostPreviews[2].md_text)
     if(number){
-        bPostPreviews = bPostPreviews.slice(-number)
+        bPostPreviews = getRandomSubarray(bPostPreviews, ncards)//bPostPreviews.slice(-number)
     }
     return(
         bPostPreviews.map(
@@ -66,7 +78,7 @@ const BlogPreviewBench = () => {
         <Jumbotron style={{height:300}}>
             <Row className="justify-content-md-center">
                 <AnimatedDiv animationName="fadeInLeft" senseOnScreen={true} time={1.0} >
-                    <h1>Latest posts!</h1>
+                    <h1>Recent Posts!</h1>
                 </AnimatedDiv>
             </Row>
             <br/>
