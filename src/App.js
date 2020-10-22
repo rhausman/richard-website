@@ -24,13 +24,15 @@ import './Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import secondBgImage from "./Assets/seated_pic.JPG"
 import githubIcon from "./Assets/github_icon.png"
-import youtubeIcon from "./Assets/youtube_icon.png"
+//import youtubeIcon from "./Assets/youtube_icon.png"
 import linkedinIcon from "./Assets/linkedin_icon.png"
 import resume from "./Assets/RESUME.pdf"
 //pics for experience section
 import rockefeller_img from "./Assets/Steller_Lab/IMG_0185.jpg"
 import stonybrook_img from "./Assets/Rolemage/IMG_6733.jpg"
 import notco_img from "./Assets/NotCo/thenotcompany.png"
+
+const youtubeIcon="https:www.pinclipart.com/picdir/middle/205-2055821_youtube-clipart-youtube-icon-gmail-icon-png-white.png"
 
 //const homepage = <HomePage parallaxImage={parallaxImage} />
 
@@ -87,7 +89,7 @@ function App() {
                   <NavDropdown.Item href={resume}>Resume</NavDropdown.Item>
                 </NavDropdown>
                 {/*IconLinks: Youtube, Github, LinkedIn */}
-                <IconLink link="https://www.youtube.com/channel/UCYpNpdtcXBxc_zYCAFadnOg" image={youtubeIcon} />
+                <IconLink link="https://www.youtube.com/channel/UCYpNpdtcXBxc_zYCAFadnOg" image={require("./Assets/youtube_icon.png")} />
                 <IconLink link="https://github.com/rhausman" image={githubIcon} />
                 <IconLink link="https://www.linkedin.com/in/richard-hausman-824035154/" image={linkedinIcon} />
               </Container>
