@@ -3,7 +3,7 @@ import { Navbar, Container, Nav, Col} from "react-bootstrap" //Nav,
 import './../Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //assets
-import logo from './../Assets/logo.svg'
+import logo from './../Assets/richard-logo-simple.png' //'Assets/logo.svg'
 
 //utils
 const scrollTop = () =>{
